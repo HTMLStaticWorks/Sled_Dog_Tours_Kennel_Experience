@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Adventure Preparation</title>
+    <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#0A1220',
+                        'secondary-bg': '#111C2D',
+                        'section-bg': '#162235',
+                        'main-text': '#F8FBFF',
+                        'soft': '#D6E2F0',
+                        'muted': '#9FB3C8',
+                        'primary-accent': '#7DD3FC',
+                        'aurora': '#6EE7B7'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            padding-bottom: 2rem;
+            opacity: 1;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+        .faq-icon {
+            transition: transform 0.5s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-primary-bg text-white">
+
+    <nav class="fixed top-0 w-full z-[100] glass-nav">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-poppins font-extrabold tracking-tighter">ARCTIC<span class="text-primary-accent">BREEZE</span></a>
+            <div class="hidden lg:flex space-x-8 items-center font-medium">
+                <a href="index.html" class="hover:text-primary-accent transition-colors">Home</a>
+                <a href="tours.html" class="hover:text-primary-accent transition-colors">Tours</a>
+                <a href="dogs.html" class="hover:text-primary-accent transition-colors">Meet the Dogs</a>
+                <a href="faqs.html" class="text-primary-accent">FAQs</a>
+                <a href="about.html" class="hover:text-primary-accent transition-colors">About</a>
+                <a href="booking.html" class="btn-premium">Book Now</a>
+            </div>
+            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="w-8 h-0.5 bg-white"></span><span class="w-8 h-0.5 bg-white"></span><span class="w-8 h-0.5 bg-white"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-20 relative overflow-hidden text-center">
+        <div class="container relative z-10">
+            <h1 class="text-5xl md:text-8xl font-poppins font-black mb-8 glow-text">Your <span class="text-primary-accent">Guide</span></h1>
+            <p class="text-xl text-soft max-w-2xl mx-auto uppercase tracking-widest font-light">Everything you need to know before you fly</p>
+        </div>
+    </section>
+
+    <!-- FAQ Accordions -->
+    <section class="py-20">
+        <div class="container max-w-3xl">
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="glass faq-item group cursor-pointer p-8">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">What should I wear for the tour?</h3>
+                        <div class="faq-icon text-primary-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></div>
+                    </div>
+                    <div class="faq-content">
+                        <p class="pt-6 text-soft leading-relaxed">
+                            While we provide high-grade thermal overalls, boots, and gloves, we recommend wearing wool base layers and a warm fleece or down jacket underneath. Avoid cotton as it retains moisture and can make you feel colder.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass faq-item group cursor-pointer p-8">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Is previous experience required?</h3>
+                        <div class="faq-icon text-primary-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></div>
+                    </div>
+                    <div class="faq-content">
+                        <p class="pt-6 text-soft leading-relaxed">
+                            No experience is necessary for most of our tours. Our professional mushers provide full safety briefings and training before every ride. For the "Full Day Expedition," a basic level of physical fitness is recommended.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass faq-item group cursor-pointer p-8">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Are children allowed on the sleds?</h3>
+                        <div class="faq-icon text-primary-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></div>
+                    </div>
+                    <div class="faq-content">
+                        <p class="pt-6 text-soft leading-relaxed">
+                            Yes! Children aged 4 and up are welcome on our "Forest Glider" and "Family Experience" tours. They will typically sit in the sled with an adult while a musher or experienced adult drives.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass faq-item group cursor-pointer p-8">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">What happens if the weather is bad?</h3>
+                        <div class="faq-icon text-primary-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></div>
+                    </div>
+                    <div class="faq-content">
+                        <p class="pt-6 text-soft leading-relaxed">
+                            Safety is our top priority. If conditions (like severe blizzards or lack of snow) make mushing unsafe, we will notify you as soon as possible to reschedule your tour or provide a full refund.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass faq-item group cursor-pointer p-8">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Can I drive my own team?</h3>
+                        <div class="faq-icon text-primary-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></div>
+                    </div>
+                    <div class="faq-content">
+                        <p class="pt-6 text-soft leading-relaxed">
+                            Yes! Most of our adult tours are "self-drive," meaning you will be in control of your own sled after the briefing. A musher will lead the way on their own sled, and you will follow in their tracks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Shared) -->
+    <footer class="bg-primary-bg/90 pt-20 pb-10 glass-nav">
+        <div class="container text-center">
+            <p class="text-soft text-sm">&copy; 2026 Arctic Breeze Sled Dog Tours. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

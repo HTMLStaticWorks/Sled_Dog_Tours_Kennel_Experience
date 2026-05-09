@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Pack | Arctic Huskies</title>
+    <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { arctic: '#0B1120', ice: '#38BDF8', glacier: '#22D3EE' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-arctic text-white overflow-x-hidden">
+
+    <!-- Elite Frost Preloader -->
+    <div id="preloader">
+        <div class="preloader-frost"></div>
+        <div class="preloader-content">
+            <div class="preloader-logo font-poppins flex items-center gap-3">
+                <svg class="w-12 h-12 text-ice animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                BREEZE
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+            <p class="text-xs uppercase tracking-[0.4em] mt-4 opacity-50">Calibrating Expedition</p>
+        </div>
+    </div>
+
+    <!-- Weather Widget -->
+    <div id="weather-widget" class="weather-widget glass shadow-2xl">
+        <div class="weather-icon">❄️</div>
+        <div>
+            <span class="weather-temp">--°C</span>
+            <span class="weather-loc">Tromsø, NO</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-[100] glass-nav">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-poppins font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <svg class="w-8 h-8 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                BREEZE
+            </a>
+            
+            <!-- Desktop Links & Icons -->
+            <div class="hidden lg:flex space-x-8 items-center font-medium">
+                <a href="index.html" class="hover:text-ice transition-colors">Home</a>
+                <a href="home2.html" class="hover:text-ice transition-colors">Home 2</a>
+                <a href="about.html" class="hover:text-ice transition-colors">About</a>
+                <a href="tours.html" class="hover:text-ice transition-colors">Tours</a>
+                <a href="gallery.html" class="hover:text-ice transition-colors">Gallery</a>
+                <a href="dogs.html" class="hover:text-ice transition-colors">Dogs</a>
+                <a href="contact.html" class="hover:text-ice transition-colors">Contact</a>
+                
+                <!-- Icons Group -->
+                <div class="flex items-center space-x-3 ml-4 border-l border-white/10 pl-6">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2.5 glass rounded-xl hover:text-ice transition-all border border-white/5 shadow-lg group" title="Toggle Theme">
+                        <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <!-- RTL Toggle -->
+                    <button id="rtl-toggle" class="p-2.5 glass rounded-xl hover:text-ice transition-all border border-white/5 shadow-lg group" title="Switch Direction">
+                        <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path></svg>
+                    </button>
+                    <!-- Book Now Icon -->
+                    <a href="booking.html" class="p-2.5 btn-premium rounded-xl shadow-ice group" title="Book Now">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Burger -->
+            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu lg:hidden">
+        <a href="index.html" class="text-2xl py-4 hover:text-ice">Home</a>
+        <a href="home2.html" class="text-2xl py-4 hover:text-ice">Home 2</a>
+        <a href="about.html" class="text-2xl py-4 hover:text-ice">About</a>
+        <a href="tours.html" class="text-2xl py-4 hover:text-ice">Tours</a>
+        <a href="gallery.html" class="text-2xl py-4 hover:text-ice">Gallery</a>
+        <a href="dogs.html" class="text-2xl py-4 hover:text-ice">Dogs</a>
+        <a href="contact.html" class="text-2xl py-4 hover:text-ice">Contact</a>
+        
+        <!-- Mobile Icons -->
+        <div class="flex space-x-4 mt-10">
+            <button id="theme-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </button>
+            <button id="rtl-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path></svg>
+            </button>
+            <a href="booking.html" class="p-5 btn-premium rounded-2xl shadow-ice">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- New Section 1: The Puppy Nursery -->
+    <section class="py-32 relative overflow-hidden reveal-item">
+        <div class="stars-overlay opacity-10"></div>
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-primary-accent font-bold uppercase tracking-[0.5em] mb-4 block">The Beginning</span>
+                <h2 class="text-5xl md:text-7xl font-poppins font-extrabold mb-8">The Puppy <span class="text-ice">Nursery</span></h2>
+                <p class="text-soft text-lg font-light leading-relaxed">
+                    Every champion starts small. Our nursery is a place of warmth and socialization, where the next generation of sled dogs begins their journey through play and early bonding.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Nursery Card 1 -->
+                <div class="tilt-card glass p-2 rounded-[32px] group overflow-hidden">
+                    <div class="card-glint"></div>
+                    <div class="h-80 overflow-hidden rounded-[24px]">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.19.04 PM.jpeg" alt="Puppy Play" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 parallax-img">
+                    </div>
+                </div>
+                <!-- Nursery Card 2 -->
+                <div class="tilt-card glass p-2 rounded-[32px] group overflow-hidden">
+                    <div class="card-glint"></div>
+                    <div class="h-80 overflow-hidden rounded-[24px]">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM.jpeg" alt="Puppy Sleep" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 parallax-img">
+                    </div>
+                </div>
+                <!-- Nursery Card 3 -->
+                <div class="tilt-card glass p-2 rounded-[32px] group overflow-hidden">
+                    <div class="card-glint"></div>
+                    <div class="h-80 overflow-hidden rounded-[24px]">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM (1).jpeg" alt="Puppy Bond" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 parallax-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 2: Retirement Program -->
+    <section class="py-24 bg-primary">
+        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1">
+                <img src="image/WhatsApp Image 2026-05-09 at 3.18.54 PM.jpeg" alt="Retired Dog" class="rounded-[30px] glass p-2 w-full grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Respect</span>
+                <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8">Honorary <span class="text-white">Retirement</span></h2>
+                <p class="text-soft text-lg mb-8 font-light leading-relaxed">
+                    When the racing days are over, our veterans enjoy a life of luxury. Our retirement program ensures every dog has a warm home, soft beds, and endless love for their remaining years.
+                </p>
+                <a href="about.html" class="btn-outline">Our Welfare Ethics</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 3: Training Regimen -->
+    <section class="py-24 bg-secondary relative overflow-hidden reveal-item">
+        <div class="stars-overlay opacity-10"></div>
+        <div class="container text-center">
+            <h2 class="text-4xl md:text-7xl font-poppins font-extrabold mb-12">The <span class="text-ice">Athlete's</span> Path</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="glass p-10 tilt-card">
+                    <div class="card-glint"></div>
+                    <h4 class="text-xl font-bold mb-4">Stamina Building</h4>
+                    <p class="text-muted text-sm">Gradual mileage increases in the autumn to prepare for the heavy winter snows.</p>
+                </div>
+                <div class="glass p-10 border-ice/30 tilt-card">
+                    <div class="card-glint"></div>
+                    <h4 class="text-xl font-bold mb-4">Command Mastery</h4>
+                    <p class="text-muted text-sm">Training the lead dogs to respond to "Gee" and "Haw" with absolute precision.</p>
+                </div>
+                <div class="glass p-10 tilt-card">
+                    <div class="card-glint"></div>
+                    <h4 class="text-xl font-bold mb-4">Social Bonding</h4>
+                    <p class="text-muted text-sm">Ensuring every dog feels safe and integrated within their specific team pack.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="tilt-card glass p-2 rounded-[32px] overflow-hidden group">
+                    <div class="card-glint"></div>
+                    <div class="h-64 overflow-hidden rounded-[24px]">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.19.06 PM (1).jpeg" alt="Training 1" class="w-full h-full object-cover parallax-img scale-110 group-hover:scale-125 transition-transform duration-1000">
+                    </div>
+                </div>
+                <div class="tilt-card glass p-2 rounded-[32px] overflow-hidden group">
+                    <div class="card-glint"></div>
+                    <div class="h-64 overflow-hidden rounded-[24px]">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.19.06 PM (2).jpeg" alt="Training 2" class="w-full h-full object-cover parallax-img scale-110 group-hover:scale-125 transition-transform duration-1000">
+                    </div>
+                </div>
+                <div class="tilt-card glass p-2 rounded-[32px] overflow-hidden group">
+                    <div class="card-glint"></div>
+                    <div class="h-64 overflow-hidden rounded-[24px]">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.19.06 PM (3).jpeg" alt="Training 3" class="w-full h-full object-cover parallax-img scale-110 group-hover:scale-125 transition-transform duration-1000">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 4: Nutrition Center -->
+    <section class="py-24 relative">
+        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Fuel</span>
+                <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8">The Arctic <span class="text-ice">Kitchen</span></h2>
+                <p class="text-soft text-lg mb-8 font-light leading-relaxed">
+                    Our dogs require up to 10,000 calories a day during peak expedition season. Our on-site kitchen prepares custom, high-protein raw diets supplemented with essential vitamins and oils.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass p-6">
+                        <span class="text-ice font-bold">120kg</span>
+                        <p class="text-[10px] uppercase text-muted mt-1">Fresh Meat Daily</p>
+                    </div>
+                    <div class="glass p-6">
+                        <span class="text-ice font-bold">Zero</span>
+                        <p class="text-[10px] uppercase text-muted mt-1">Artificial Fillers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-2">
+                <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM.jpeg" alt="Nutrition" class="rounded-[20px] w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-20 relative overflow-hidden text-center forest-section">
+        <div class="stars-overlay"></div>
+        <div class="container relative z-10">
+            <h1 class="text-5xl md:text-8xl font-poppins font-black mb-8 glow-text">The <span class="text-ice">Alphas</span></h1>
+            <p class="text-xl text-frozen-gray max-w-2xl mx-auto uppercase tracking-[0.3em] font-light">Meet the heart and soul of the trail</p>
+        </div>
+    </section>
+
+    <!-- Dog Directory -->
+    <section class="py-20">
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Dog 1: Balto -->
+            <div class="glass p-2 group tilt-card">
+                <div class="relative h-80 overflow-hidden rounded-[20px]">
+                    <img src="image/WhatsApp Image 2026-05-09 at 3.19.01 PM (1).jpeg" alt="Balto" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-arctic via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="text-2xl font-bold">Balto</h3>
+                        <span class="text-ice text-xs font-bold uppercase">Lead Dog</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-frozen-gray text-sm mb-6">"Natural born leader with a calm spirit. Balto has guided over 200 expeditions."</p>
+                    <div class="flex justify-center gap-4 text-xs font-bold uppercase text-white/50">
+                        <span>Age: 6</span>
+                        <span>|</span>
+                        <span>Role: Lead</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dog 2: Luna -->
+            <div class="glass p-2 group tilt-card">
+                <div class="relative h-80 overflow-hidden rounded-[20px]">
+                    <img src="image/WhatsApp Image 2026-05-09 at 3.19.03 PM.jpeg" alt="Luna" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-arctic via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="text-2xl font-bold">Luna</h3>
+                        <span class="text-ice text-xs font-bold uppercase">Swing Dog</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-frozen-gray text-sm mb-6">"Fast, agile, and incredibly responsive. Luna keeps the pace steady."</p>
+                    <div class="flex justify-center gap-4 text-xs font-bold uppercase text-white/50">
+                        <span>Age: 4</span>
+                        <span>|</span>
+                        <span>Role: Swing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dog 3: Ghost -->
+            <div class="glass p-2 group tilt-card">
+                <div class="relative h-80 overflow-hidden rounded-[20px]">
+                    <img src="image/WhatsApp Image 2026-05-09 at 3.19.04 PM.jpeg" alt="Ghost" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-arctic via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="text-2xl font-bold">Ghost</h3>
+                        <span class="text-ice text-xs font-bold uppercase">Team Dog</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-frozen-gray text-sm mb-6">"Silent but powerful. Ghost is the muscle of the mid-pack."</p>
+                    <div class="flex justify-center gap-4 text-xs font-bold uppercase text-white/50">
+                        <span>Age: 5</span>
+                        <span>|</span>
+                        <span>Role: Team</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dog 4: Sitka -->
+            <div class="glass p-2 group tilt-card">
+                <div class="relative h-80 overflow-hidden rounded-[20px]">
+                    <img src="image/WhatsApp Image 2026-05-09 at 3.19.05 PM.jpeg" alt="Sitka" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-arctic via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="text-2xl font-bold">Sitka</h3>
+                        <span class="text-ice text-xs font-bold uppercase">Wheel Dog</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-frozen-gray text-sm mb-6">"The strongest member of the team. Sitka handles the heaviest loads."</p>
+                    <div class="flex justify-center gap-4 text-xs font-bold uppercase text-white/50">
+                        <span>Age: 7</span>
+                        <span>|</span>
+                        <span>Role: Wheel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breed Knowledge -->
+    <section class="py-24 space-section relative overflow-hidden">
+        <div class="stars-overlay"></div>
+        <div class="container flex flex-col md:flex-row items-center gap-20 relative z-10">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8 !text-white">Built for the <span class="text-ice">Extreme</span></h2>
+                <p class="!text-white text-lg mb-10">
+                    Our kennel primarily features Alaskan and Siberian Huskies. Unlike purebred show dogs, these are performance athletes, bred over centuries for Arctic survival.
+                </p>
+                <div class="space-y-6">
+                    <div class="glass p-6 border-l-4 border-ice">
+                        <h4 class="text-xl font-bold mb-2">Double Coat</h4>
+                        <p class="text-sm text-frozen-gray">Insulated fur that can withstand temperatures as low as -50°C.</p>
+                    </div>
+                    <div class="glass p-6 border-l-4 border-glacier">
+                        <h4 class="text-xl font-bold mb-2">Metabolic Magic</h4>
+                        <p class="text-sm text-frozen-gray">Huskies can burn calories at an incredible rate without depleting energy stores.</p>
+                    </div>
+                    <div class="glass p-6 border-l-4 border-white/30">
+                        <h4 class="text-xl font-bold mb-2">Social Intelligence</h4>
+                        <p class="text-sm text-frozen-gray">Pack dynamics are complex, allowing for seamless teamwork on the trail.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="glass p-2 rounded-[50px] overflow-hidden">
+                    <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM (1).jpeg" alt="Huskies Close" class="rounded-[40px] w-full">
+                </div>
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 glass rounded-full flex items-center justify-center text-center p-6 border-2 border-ice animate-pulse">
+                    <span class="text-xs font-bold uppercase tracking-widest">100% Pure Athlete</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 relative overflow-hidden reveal-item">
+        <div class="absolute inset-0 z-0">
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM.jpeg" alt="Arctic Horizon" class="w-full h-full object-cover opacity-40 parallax-img scale-110">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-bg via-primary-bg/20 to-primary-bg"></div>
+        </div>
+        <div class="container relative z-10 px-6">
+            <div class="tilt-card glass p-12 md:p-24 rounded-[40px] border border-white/20 shadow-[0_0_50px_rgba(56,189,248,0.1)] max-w-5xl mx-auto backdrop-blur-2xl">
+                <div class="card-glint"></div>
+                <div class="text-center">
+                    <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-6 glow-text">Ready to <span class="text-primary-accent">Lead</span>?</h2>
+                    <p class="text-lg text-soft mb-10 max-w-xl mx-auto font-light leading-relaxed">The wilderness is calling. Secure your spot on our next expedition and experience the magic of the North.</p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="booking.html" class="btn-premium px-10 py-4 text-sm uppercase tracking-widest shadow-ice">Secure Your Slot</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-arctic/90 pt-20 pb-10 glass-nav">
+        <div class="container grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                    <svg class="w-8 h-8 text-ice group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                    <span class="text-2xl font-poppins font-black text-white">BREEZE</span>
+                </a>
+                <p class="text-frozen-gray mb-8">Premium Arctic adventures and professional sled dog training in the heart of the North.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 glass flex items-center justify-center hover:text-ice transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                    <a href="#" class="w-10 h-10 glass flex items-center justify-center hover:text-ice transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.247 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.247-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.247-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.247 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-frozen-gray">
+                    <li><a href="home2.html" class="hover:text-ice transition-all">Home 2</a></li>
+                    <li><a href="about.html" class="hover:text-ice transition-all">Our Story</a></li>
+                    <li><a href="tours.html" class="hover:text-ice transition-all">Expeditions</a></li>
+                    <li><a href="dogs.html" class="hover:text-ice transition-all">Dogs</a></li>
+                    <li><a href="gallery.html" class="hover:text-ice transition-all">Gallery</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Contact</h4>
+                <ul class="space-y-4 text-frozen-gray">
+                    <li>123 Arctic Trail, Tromsø, Norway</li>
+                    <li>+47 123 456 789</li>
+                    <li>adventure@arcticbreeze.com</li>
+                    <li>Mon - Sun: 08:00 - 20:00</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Newsletter</h4>
+                <p class="text-frozen-gray mb-6 text-sm">Join our mailing list for exclusive Arctic offers.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your Email" class="bg-white/5 border border-white/10 px-4 py-3 rounded-l-lg focus:outline-none w-full">
+                    <button class="bg-ice text-arctic px-4 py-3 rounded-r-lg font-bold">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="container border-t border-white/10 pt-10 text-center text-frozen-gray text-sm">
+            &copy; 2026 Arctic Breeze Sled Dog Tours. All Rights Reserved. Designed with &hearts; in the Arctic.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
