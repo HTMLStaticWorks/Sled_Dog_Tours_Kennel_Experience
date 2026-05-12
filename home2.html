@@ -62,7 +62,7 @@
             </a>
             
             <!-- Desktop Links & Icons -->
-            <div class="hidden xl:flex space-x-8 items-center font-medium">
+            <div class="hidden lg:flex space-x-8 items-center font-medium">
                 <a href="index.html" class="hover:text-ice transition-colors">Home</a>
                 <a href="home2.html" class="hover:text-ice transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-ice transition-colors">About</a>
@@ -82,14 +82,16 @@
                         <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path></svg>
                     </button>
                     <!-- Book Now Icon -->
-                    <a href="booking.html" class="p-2.5 btn-premium rounded-xl shadow-ice group" title="Book Now">
-                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <a href="booking.html" class="p-2.5 btn-premium group" title="Book Now">
+                        <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     </a>
                 </div>
             </div>
 
             <!-- Burger -->
-            <button class="burger-menu xl:hidden flex flex-col space-y-1.5 focus:outline-none">
+            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
@@ -98,7 +100,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu xl:hidden">
+    <div class="mobile-menu lg:hidden">
         <a href="index.html" class="text-2xl py-4 hover:text-ice">Home</a>
         <a href="home2.html" class="text-2xl py-4 hover:text-ice">Home 2</a>
         <a href="about.html" class="text-2xl py-4 hover:text-ice">About</a>
@@ -115,8 +117,9 @@
             <button id="rtl-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path></svg>
             </button>
-            <a href="booking.html" class="p-5 btn-premium rounded-2xl shadow-ice">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <a href="booking.html" class="p-5 btn-premium">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
             </a>
         </div>
     </div>
@@ -151,13 +154,15 @@
             <div class="stars-overlay opacity-10"></div>
             <div class="container relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                    <div>
+                    <div class="text-center">
                         <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Chapter 01</span>
                         <h2 class="text-5xl md:text-7xl font-poppins font-extrabold mb-8">The Call of <br>the Pack</h2>
                         <p class="text-xl text-soft leading-relaxed mb-10 font-light">
                             It starts with a howl. A vibration in the frozen air. Before the first light touches the horizon, the team is ready. This is not just a ride; it's a symphony of power and trust.
                         </p>
-                        <a href="dogs.html" class="btn-outline">Meet the Alpha</a>
+                        <div class="flex justify-center">
+                            <a href="dogs.html" class="btn-outline">Meet the Alpha</a>
+                        </div>
                     </div>
                     <div class="glass p-4 transform rotate-3 hover:rotate-0 transition-transform duration-700">
                         <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM (1).jpeg" alt="Sled Dogs" class="rounded-[20px] w-full shadow-2xl">
@@ -310,7 +315,7 @@
 
     <!-- Footer -->
         <footer class="bg-arctic/90 pt-20 pb-10 glass-nav">
-            <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div class="container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-20">
                 <div class="col-span-1 md:col-span-1">
                 <a href="index.html" class="flex items-center gap-2 mb-6 group">
                     <svg class="w-8 h-8 text-ice group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>

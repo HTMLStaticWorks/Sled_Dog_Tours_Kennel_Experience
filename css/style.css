@@ -120,12 +120,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Premium Buttons - Minimalist & Functional */
 .btn-premium {
-    background: var(--primary-accent);
-    color: #08111F;
-    padding: 12px 32px;
-    border-radius: 4px;
-    font-weight: 700;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #ffffff !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 800;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -133,16 +133,17 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: 0.85rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
 }
 
 .btn-premium:hover {
-    background: var(--hover-highlight);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px var(--glow-shadow);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5);
+    filter: brightness(1.1);
 }
 
 .btn-outline {
@@ -187,6 +188,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .reveal {
     animation: fadeIn 1s ease forwards;
+}
+
+/* Form Elements */
+select option {
+    background-color: #111C2D !important;
+    color: #ffffff !important;
+}
+
+select:focus {
+    background-color: #111C2D !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 /* Custom Scrollbar */
@@ -244,6 +259,17 @@ section {
     z-index: 90;
     transform: translateX(100%);
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-menu .glass {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.mobile-menu #theme-toggle-mobile svg,
+.mobile-menu #rtl-toggle-mobile svg {
+    color: #38BDF8 !important;
+    stroke: #38BDF8 !important;
 }
 
 .mobile-menu.active {
@@ -482,11 +508,14 @@ section {
 /* --- Theme & RTL Support --- */
 .light-mode {
     background-color: #f0f7ff !important;
-    color: #0A1220 !important;
+    color: #000000 !important;
     --primary-bg: #f0f7ff;
-    --main-text: #0A1220;
-    --soft-text: #111827; /* Darker subtext */
-    --frozen-gray: #4B5563; /* Darker gray for light mode */
+    --secondary-bg: #e0f2fe;
+    --section-bg: #f8fbff;
+    --main-text: #000000;
+    --soft-text: #111111;
+    --muted-text: #333333;
+    --frozen-gray: #000000;
 }
 
 .light-mode .glass, .light-mode .glass-nav {
@@ -496,10 +525,16 @@ section {
     color: #0A1220 !important;
 }
 
-.light-mode .text-white { color: #0A1220 !important; }
-.light-mode .text-soft { color: #111827 !important; }
-.light-mode .text-muted { color: #374151 !important; }
-.light-mode section { background-color: #f8fbff; }
+.light-mode .text-white { color: #000000 !important; }
+.light-mode .text-soft { color: #111111 !important; }
+.light-mode .text-muted { color: #333333 !important; }
+.light-mode .text-frozen-gray { color: #000000 !important; }
+.light-mode section { background-color: var(--section-bg); }
+.light-mode .text-ice { color: #0369a1 !important; }
+.light-mode .text-glacier { color: #0891b2 !important; }
+.light-mode .text-aurora { color: #059669 !important; }
+.light-mode .glow-text { text-shadow: none !important; }
+.light-mode .stars-overlay { opacity: 0.03; }
 
 /* Weather Widget Light Mode Fix */
 .light-mode .weather-widget {
@@ -529,10 +564,12 @@ section {
 }
 
 /* Form Light Mode Fixes */
-.light-mode .peer {
+.light-mode input, .light-mode select, .light-mode textarea {
+    background-color: rgba(0, 0, 0, 0.05) !important;
     border-color: rgba(0, 0, 0, 0.1) !important;
-    color: #0A1220 !important;
+    color: #000000 !important;
 }
+
 .light-mode label.peer-focus, 
 .light-mode label.peer-[:not(:placeholder-shown)] {
     color: #38BDF8 !important;
@@ -540,14 +577,9 @@ section {
 .light-mode label {
     color: rgba(10, 18, 32, 0.5) !important;
 }
-.light-mode select {
-    background: rgba(0, 0, 0, 0.05) !important;
-    color: #0A1220 !important;
-    border-color: rgba(0, 0, 0, 0.1) !important;
-}
 .light-mode select option {
     background: #ffffff !important;
-    color: #0A1220 !important;
+    color: #000000 !important;
 }
 
 /* Mobile Nav Light Mode Fixes */
