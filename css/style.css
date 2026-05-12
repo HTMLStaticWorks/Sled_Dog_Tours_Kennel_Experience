@@ -536,6 +536,23 @@ section {
 .light-mode .glow-text { text-shadow: none !important; }
 .light-mode .stars-overlay { opacity: 0.03; }
 
+/* Keep-white should be blue in light mode for contrast, white in dark mode */
+.keep-white { color: #ffffff; }
+.light-mode .keep-white { color: #0369a1 !important; }
+
+.light-mode .text-primary-accent { color: #0369a1 !important; }
+
+/* Improved visibility for badges on images in light mode */
+.light-mode .absolute span.bg-white\/10,
+.light-mode .absolute span.bg-white\/20,
+.light-mode .absolute .glass {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #0369a1 !important;
+    border-color: rgba(3, 105, 161, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    font-weight: 700 !important;
+}
+
 /* Weather Widget Light Mode Fix */
 .light-mode .weather-widget {
     background: rgba(255, 255, 255, 0.8) !important;
