@@ -57,7 +57,7 @@
             </a>
 
             <!-- Desktop Links & Icons -->
-            <div class="hidden lg:flex space-x-8 items-center font-medium">
+            <div class="hidden xl:flex space-x-8 items-center font-medium">
                 <a href="index.html" class="hover:text-ice transition-colors">Home</a>
                 <a href="home2.html" class="hover:text-ice transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-ice transition-colors">About</a>
@@ -102,7 +102,7 @@
             </div>
 
             <!-- Burger -->
-            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+            <button class="burger-menu xl:hidden flex flex-col space-y-1.5 focus:outline-none">
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
@@ -111,7 +111,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu lg:hidden">
+    <div class="mobile-menu xl:hidden">
         <a href="index.html" class="text-2xl py-4 hover:text-ice">Home</a>
         <a href="home2.html" class="text-2xl py-4 hover:text-ice">Home 2</a>
         <a href="about.html" class="text-2xl py-4 hover:text-ice">About</a>
@@ -146,24 +146,22 @@
     </div>
 
     <!-- New Section 1: Custom Expeditions -->
-    <section class="py-24 relative overflow-hidden">
+    <section class="py-24 relative overflow-hidden text-center">
         <div class="stars-overlay opacity-10"></div>
-        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div class="glass p-2 order-2 lg:order-1">
+        <div class="container max-w-4xl relative z-10">
+            <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Tailored</span>
+            <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8">Custom <span
+                    class="text-primary-accent">Expeditions</span></h2>
+            <p class="text-soft text-lg mb-10 font-light leading-relaxed mx-auto max-w-2xl">
+                Have a specific vision for your Arctic adventure? From multi-day crossing to professional
+                photography workshops, we can design a bespoke journey that fits your specific needs and skill
+                level.
+            </p>
+            <div class="glass p-2 mb-12 max-w-2xl mx-auto">
                 <img src="image/WhatsApp Image 2026-05-09 at 3.19.01 PM.jpeg" alt="Custom"
-                    class="rounded-[20px] w-full">
+                    class="rounded-[20px] w-full h-[400px] object-cover">
             </div>
-            <div class="order-1 lg:order-2">
-                <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Tailored</span>
-                <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8">Custom <span
-                        class="text-primary-accent">Expeditions</span></h2>
-                <p class="text-soft text-lg mb-8 font-light leading-relaxed">
-                    Have a specific vision for your Arctic adventure? From multi-day crossing to professional
-                    photography workshops, we can design a bespoke journey that fits your specific needs and skill
-                    level.
-                </p>
-                <a href="contact.html" class="btn-outline">Inquire for Custom Tour</a>
-            </div>
+            <a href="contact.html" class="btn-outline px-12">Inquire for Custom Tour</a>
         </div>
     </section>
 
@@ -223,9 +221,9 @@
     <section class="pt-40 pb-20 relative overflow-hidden text-center space-section">
         <div class="stars-overlay"></div>
         <div class="container relative z-10">
-            <h1 class="text-5xl md:text-8xl font-poppins font-black mb-8 glow-text">Choose Your <span
+            <h1 class="text-5xl md:text-8xl font-poppins font-black mb-8 glow-text keep-white">Choose Your <span
                     class="text-ice">Path</span></h1>
-            <p class="text-xl text-frozen-gray max-w-2xl mx-auto uppercase tracking-widest font-light">From gentle
+            <p class="text-xl text-frozen-gray max-w-2xl mx-auto uppercase tracking-widest font-light keep-white">From gentle
                 glides to extreme survival</p>
         </div>
     </section>
@@ -235,7 +233,7 @@
         <div class="stars-overlay opacity-10"></div>
         <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
             <!-- Beginner Ride -->
-            <div class="glass overflow-hidden group tilt-card">
+            <div class="glass overflow-hidden group tilt-card flex flex-col h-full">
                 <div class="h-72 overflow-hidden relative">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.18.49 PM.jpeg" alt="Beginner"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -246,7 +244,7 @@
                             Level</span>
                     </div>
                 </div>
-                <div class="p-8 text-center">
+                <div class="p-8 text-center flex flex-col flex-grow">
                     <h3 class="text-3xl font-bold mb-4">Forest Glider</h3>
                     <div class="flex justify-center gap-6 mb-6 text-sm text-frozen-gray">
                         <span>⏱ 2 Hours</span>
@@ -254,14 +252,16 @@
                     </div>
                     <p class="text-frozen-gray mb-8">A smooth introduction to mushing through our private pine forests.
                         Perfect for beginners and children.</p>
-                    <div class="text-3xl font-black text-ice mb-8">$149 <span class="text-sm font-normal text-muted">/
-                            person</span></div>
-                    <a href="booking.html" class="btn-premium w-full">Book Experience</a>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black text-ice mb-8">$149 <span class="text-sm font-normal text-muted">/
+                                person</span></div>
+                        <a href="booking.html" class="btn-premium w-full block">Book Experience</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Northern Lights -->
-            <div class="glass overflow-hidden group tilt-card">
+            <div class="glass overflow-hidden group tilt-card flex flex-col h-full">
                 <div class="h-72 overflow-hidden relative">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.19.03 PM (1).jpeg" alt="Aurora"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -271,7 +271,7 @@
                             class="bg-glacier/20 text-glacier text-xs font-bold px-3 py-1 rounded-full border border-glacier/30 uppercase">Signature</span>
                     </div>
                 </div>
-                <div class="p-8 text-center">
+                <div class="p-8 text-center flex flex-col flex-grow">
                     <h3 class="text-3xl font-bold mb-4">Aurora Chase</h3>
                     <div class="flex justify-center gap-6 mb-6 text-sm text-frozen-gray">
                         <span>⏱ 4 Hours</span>
@@ -279,14 +279,16 @@
                     </div>
                     <p class="text-frozen-gray mb-8">Navigate the frozen lakes at night under the dancing lights.
                         Includes a campfire break with hot cider.</p>
-                    <div class="text-3xl font-black text-ice mb-8">$299 <span class="text-sm font-normal text-muted">/
-                            person</span></div>
-                    <a href="booking.html" class="btn-premium w-full">Book Experience</a>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black text-ice mb-8">$299 <span class="text-sm font-normal text-muted">/
+                                person</span></div>
+                        <a href="booking.html" class="btn-premium w-full block">Book Experience</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Full Day -->
-            <div class="glass overflow-hidden group tilt-card">
+            <div class="glass overflow-hidden group tilt-card flex flex-col h-full">
                 <div class="h-72 overflow-hidden relative">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM.jpeg" alt="Expedition"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -296,7 +298,7 @@
                             class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20 uppercase">Extreme</span>
                     </div>
                 </div>
-                <div class="p-8 text-center">
+                <div class="p-8 text-center flex flex-col flex-grow">
                     <h3 class="text-3xl font-bold mb-4">The Expedition</h3>
                     <div class="flex justify-center gap-6 mb-6 text-sm text-frozen-gray">
                         <span>⏱ 8 Hours</span>
@@ -304,20 +306,22 @@
                     </div>
                     <p class="text-frozen-gray mb-8">Take full control of your own team. Drive 30km into the deep
                         wilderness. Lunch prepared over open fire.</p>
-                    <div class="text-3xl font-black text-ice mb-8">$450 <span class="text-sm font-normal text-muted">/
-                            person</span></div>
-                    <a href="booking.html" class="btn-premium w-full">Book Experience</a>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black text-ice mb-8">$450 <span class="text-sm font-normal text-muted">/
+                                person</span></div>
+                        <a href="booking.html" class="btn-premium w-full block">Book Experience</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Sunset Trail -->
-            <div class="glass overflow-hidden group tilt-card">
+            <div class="glass overflow-hidden group tilt-card flex flex-col h-full">
                 <div class="h-72 overflow-hidden relative">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.18.52 PM.jpeg" alt="Sunset"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-arctic/80 to-transparent"></div>
                 </div>
-                <div class="p-8 text-center">
+                <div class="p-8 text-center flex flex-col flex-grow">
                     <h3 class="text-3xl font-bold mb-4">Golden Hour</h3>
                     <div class="flex justify-center gap-6 mb-6 text-sm text-frozen-gray">
                         <span>⏱ 3 Hours</span>
@@ -325,20 +329,22 @@
                     </div>
                     <p class="text-frozen-gray mb-8">Witness the Arctic sunset turn the snow into gold. A cinematic ride
                         for photography enthusiasts.</p>
-                    <div class="text-3xl font-black text-ice mb-8">$199 <span class="text-sm font-normal text-muted">/
-                            person</span></div>
-                    <a href="booking.html" class="btn-premium w-full">Book Experience</a>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black text-ice mb-8">$199 <span class="text-sm font-normal text-muted">/
+                                person</span></div>
+                        <a href="booking.html" class="btn-premium w-full block">Book Experience</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Puppy Meet -->
-            <div class="glass overflow-hidden group tilt-card">
+            <div class="glass overflow-hidden group tilt-card flex flex-col h-full">
                 <div class="h-72 overflow-hidden relative">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM (1).jpeg" alt="Puppies"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-arctic/80 to-transparent"></div>
                 </div>
-                <div class="p-8 text-center">
+                <div class="p-8 text-center flex flex-col flex-grow">
                     <h3 class="text-3xl font-bold mb-4">Puppy Academy</h3>
                     <div class="flex justify-center gap-6 mb-6 text-sm text-frozen-gray">
                         <span>⏱ 1.5 Hours</span>
@@ -346,14 +352,16 @@
                     </div>
                     <p class="text-frozen-gray mb-8">Visit our nursery and learn about how we raise the next generation
                         of champions. Interaction guaranteed.</p>
-                    <div class="text-3xl font-black text-ice mb-8">$89 <span class="text-sm font-normal text-muted">/
-                            person</span></div>
-                    <a href="booking.html" class="btn-premium w-full">Book Experience</a>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black text-ice mb-8">$89 <span class="text-sm font-normal text-muted">/
+                                person</span></div>
+                        <a href="booking.html" class="btn-premium w-full block">Book Experience</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Advanced Training -->
-            <div class="glass overflow-hidden group tilt-card">
+            <div class="glass overflow-hidden group tilt-card flex flex-col h-full">
                 <div class="h-72 overflow-hidden relative">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.19.06 PM (1).jpeg" alt="Training"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -363,7 +371,7 @@
                             class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30 uppercase">Pro</span>
                     </div>
                 </div>
-                <div class="p-8 text-center">
+                <div class="p-8 text-center flex flex-col flex-grow">
                     <h3 class="text-3xl font-bold mb-4">Musher Training</h3>
                     <div class="flex justify-center gap-6 mb-6 text-sm text-frozen-gray">
                         <span>⏱ 3 Days</span>
@@ -371,9 +379,11 @@
                     </div>
                     <p class="text-frozen-gray mb-8">A comprehensive course on sled management, dog psychology, and
                         wilderness survival. Certification included.</p>
-                    <div class="text-3xl font-black text-ice mb-8">$1,200 <span class="text-sm font-normal text-muted">/
-                            course</span></div>
-                    <a href="booking.html" class="btn-premium w-full">Apply Now</a>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-black text-ice mb-8">$1,200 <span class="text-sm font-normal text-muted">/
+                                course</span></div>
+                        <a href="booking.html" class="btn-premium w-full block">Apply Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -408,7 +418,7 @@
 
     <!-- Footer -->
     <footer class="bg-arctic/90 pt-20 pb-10 glass-nav">
-        <div class="container grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
             <div class="col-span-1 md:col-span-1">
                 <a href="index.html" class="flex items-center gap-2 mb-6 group">
                     <svg class="w-8 h-8 text-ice group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>

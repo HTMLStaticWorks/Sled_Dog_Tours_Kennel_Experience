@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeSwitcher();
     initCustomCursor();
     initMagicalScroll();
+    initBackToTop();
+    initActiveLink();
 });
 
 // Custom Premium Cursor
@@ -303,11 +305,20 @@ function initThemeSwitcher() {
             const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
             document.documentElement.dir = newDir;
             
+            // Toggle active class for styling
+            rtlToggles.forEach(t => t.classList.toggle('rtl-active', newDir === 'rtl'));
+            
             // Save preference
             localStorage.setItem('dir', newDir);
             
             // GSAP feedback
-            gsap.to(toggle, { x: newDir === 'rtl' ? -5 : 0, duration: 0.3 });
+            gsap.to(toggle, { 
+                scale: 1.2, 
+                duration: 0.2, 
+                yoyo: true, 
+                repeat: 1,
+                ease: 'power2.inOut'
+            });
         });
     });
 
@@ -317,6 +328,7 @@ function initThemeSwitcher() {
     }
     if (localStorage.getItem('dir') === 'rtl') {
         document.documentElement.dir = 'rtl';
+        rtlToggles.forEach(t => t.classList.add('rtl-active'));
     }
 }
 
@@ -394,4 +406,69 @@ function initVideoHero() {
             gsap.to(video, { playbackRate: 1.0, duration: 1 });
         });
     }
+}
+
+// Active Link Highlighter
+function initActiveLink() {
+    const currentPath = window.location.pathname.split('/').pop().toLowerCase() || 'index.html';
+    const navLinks = document.querySelectorAll('.glass-nav a, .mobile-menu a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        const linkPath = href.split('/').pop().toLowerCase();
+        
+        // Match index.html for empty paths or root
+        const isIndex = (currentPath === 'index.html' || currentPath === '');
+        const isLinkIndex = (linkPath === 'index.html');
+        
+        if (linkPath === currentPath || (isIndex && isLinkIndex)) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Back to Top Logic
+function initBackToTop() {
+    // Create button
+    const btn = document.createElement('div');
+    btn.id = 'back-to-top';
+    btn.className = 'glass';
+    btn.innerHTML = `
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    `;
+    document.body.appendChild(btn);
+
+    // Show/Hide on scroll
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 500) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // GSAP flair
+        gsap.to(btn, {
+            y: -20,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power4.in',
+            onComplete: () => {
+                gsap.to(btn, { y: 0, opacity: 1, duration: 0.3 });
+            }
+        });
+    });
 }

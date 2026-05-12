@@ -64,7 +64,7 @@
             </a>
             
             <!-- Desktop Links & Icons -->
-            <div class="hidden lg:flex space-x-8 items-center font-medium">
+            <div class="hidden xl:flex space-x-8 items-center font-medium">
                 <a href="index.html" class="hover:text-ice transition-colors">Home</a>
                 <a href="home2.html" class="hover:text-ice transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-ice transition-colors">About</a>
@@ -91,7 +91,7 @@
             </div>
 
             <!-- Burger -->
-            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+            <button class="burger-menu xl:hidden flex flex-col space-y-1.5 focus:outline-none">
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
@@ -100,7 +100,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu lg:hidden">
+    <div class="mobile-menu xl:hidden">
         <a href="index.html" class="text-2xl py-4 hover:text-ice">Home</a>
         <a href="home2.html" class="text-2xl py-4 hover:text-ice">Home 2</a>
         <a href="about.html" class="text-2xl py-4 hover:text-ice">About</a>
@@ -124,7 +124,7 @@
     </div>
 
     <!-- Booking Content -->
-    <section class="pt-40 pb-20 relative overflow-hidden">
+    <section class="pt-40 pb-20 relative overflow-hidden space-section">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
                 <!-- Info Column -->
@@ -151,7 +151,7 @@
                 <!-- Form Column -->
                 <div class="glass p-10 md:p-16 relative">
                     <form class="space-y-8">
-                        <div>
+                        <div class="relative">
                             <label class="block text-xs font-bold uppercase tracking-widest text-primary-accent mb-4">Select Tour</label>
                             <select class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-primary-accent appearance-none">
                                 <option>Beginner Forest Ride - $149</option>
@@ -159,6 +159,9 @@
                                 <option>Full Day Expedition - $450</option>
                                 <option>Golden Hour Ride - $199</option>
                             </select>
+                            <div class="absolute right-6 bottom-4 pointer-events-none opacity-50">
+                                <svg class="w-4 h-4 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-8">
@@ -213,7 +216,7 @@
 
     <!-- Footer -->
     <footer class="bg-arctic/90 pt-20 pb-10 glass-nav">
-        <div class="container grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
             <div class="col-span-1 md:col-span-1">
                 <a href="index.html" class="flex items-center gap-2 mb-6 group">
                     <svg class="w-8 h-8 text-ice group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
