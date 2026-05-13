@@ -670,3 +670,30 @@ section {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
+
+/* Footer Social Icons Hover Effect */
+footer .flex.space-x-4 a.glass {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+}
+
+footer .flex.space-x-4 a.glass:hover {
+    transform: translateY(-8px) rotate(8deg) scale(1.15);
+    background: var(--arctic-gradient) !important;
+    color: var(--arctic-dark) !important;
+    border-color: var(--primary-accent) !important;
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+}
+
+footer .flex.space-x-4 a.glass:hover svg {
+    filter: drop-shadow(0 0 2px rgba(10, 18, 32, 0.3));
+}
+
+/* Light Mode Overrides for Footer Social Icons */
+.light-mode footer .flex.space-x-4 a.glass:hover {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+    color: #ffffff !important;
+    border-color: #0ea5e9 !important;
+    box-shadow: 0 15px 30px rgba(14, 165, 233, 0.3);
+}
