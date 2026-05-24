@@ -18,7 +18,7 @@
                         'soft': '#D6E2F0',
                         'muted': '#9FB3C8',
                         'primary-accent': '#7DD3FC',
-                        'aurora': '#6EE7B7'
+                        'aurora': '#7DD3FC'
                     },
                     fontFamily: { sans: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] }
                 }
@@ -48,22 +48,75 @@
 </head>
 <body class="bg-primary-bg text-white">
 
+    <!-- Navbar -->
     <nav class="fixed top-0 w-full z-[100] glass-nav">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-poppins font-extrabold tracking-tighter">ARCTIC<span class="text-primary-accent">BREEZE</span></a>
-            <div class="hidden lg:flex space-x-8 items-center font-medium">
-                <a href="index.html" class="hover:text-primary-accent transition-colors">Home</a>
-                <a href="tours.html" class="hover:text-primary-accent transition-colors">Tours</a>
-                <a href="dogs.html" class="hover:text-primary-accent transition-colors">Meet the Dogs</a>
-                <a href="faqs.html" class="text-primary-accent">FAQs</a>
-                <a href="about.html" class="hover:text-primary-accent transition-colors">About</a>
-                <a href="booking.html" class="btn-premium">Book Now</a>
+            <a href="index.html" class="text-2xl font-poppins font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <svg class="w-8 h-8 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                BREEZE
+            </a>
+            
+            <!-- Desktop Links & Icons -->
+            <div class="hidden xl:flex space-x-8 items-center font-medium">
+                <a href="index.html" class="hover:text-ice transition-colors">Basecamp</a>
+                <a href="home2.html" class="hover:text-ice transition-colors">The Saga</a>
+                <a href="about.html" class="hover:text-ice transition-colors">Our Pack</a>
+                <a href="tours.html" class="hover:text-ice transition-colors">Explore Tours</a>
+                <a href="gallery.html" class="hover:text-ice transition-colors">Trail Views</a>
+                <a href="dogs.html" class="hover:text-ice transition-colors">Meet the Huskies</a>
+                <a href="contact.html" class="hover:text-ice transition-colors">Join the Pack</a>
+                
+                <!-- Icons Group -->
+                <div class="flex items-center space-x-3 ml-4 border-l border-white/10 pl-6">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2.5 glass rounded-xl hover:text-ice transition-all border border-white/5 shadow-lg group" title="Toggle Theme">
+                        <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <!-- RTL Toggle -->
+                    <button id="rtl-toggle" class="p-2.5 glass rounded-xl hover:text-ice transition-all border border-white/5 shadow-lg group" title="Switch Direction">
+                        <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                    </button>
+                    <!-- Book Now Icon -->
+                    <a href="booking.html" class="p-2.5 btn-premium rounded-xl shadow-ice group" title="Book a Ride">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
             </div>
-            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
-                <span class="w-8 h-0.5 bg-white"></span><span class="w-8 h-0.5 bg-white"></span><span class="w-8 h-0.5 bg-white"></span>
+
+            <!-- Burger -->
+            <button class="burger-menu xl:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu xl:hidden">
+        <a href="index.html" class="text-2xl py-4 hover:text-ice">Basecamp</a>
+        <a href="home2.html" class="text-2xl py-4 hover:text-ice">The Saga</a>
+        <a href="about.html" class="text-2xl py-4 hover:text-ice">Our Pack</a>
+        <a href="tours.html" class="text-2xl py-4 hover:text-ice">Explore Tours</a>
+        <a href="gallery.html" class="text-2xl py-4 hover:text-ice">Trail Views</a>
+        <a href="dogs.html" class="text-2xl py-4 hover:text-ice">Meet the Huskies</a>
+        <a href="contact.html" class="text-2xl py-4 hover:text-ice">Join the Pack</a>
+        
+        <!-- Mobile Icons -->
+        <div class="flex space-x-4 mt-10">
+            <button id="theme-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </button>
+            <button id="rtl-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+            </button>
+            <a href="booking.html" class="p-5 btn-premium rounded-2xl shadow-ice">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </a>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section class="pt-40 pb-20 relative overflow-hidden text-center">

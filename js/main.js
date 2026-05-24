@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSnowfall();
     initGSAP();
     initMobileMenu();
-    init3DTilt();
-    initPreloader();
+    // init3DTilt(); // Disabled for a more professional, natural feel
+    // initPreloader(); // Disabled for instant page transitions
     initWeatherWidget();
     initVideoHero();
     initThemeSwitcher();
@@ -68,28 +68,27 @@ function initMagicalScroll() {
 function initGSAP() {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Fade in sections on scroll with staggering
+    // Fade in sections on scroll with staggering - simplified for professional aesthetic
     const sections = gsap.utils.toArray('section');
     sections.forEach(section => {
         const reveals = section.querySelectorAll('.reveal-item');
         if (reveals.length > 0) {
             gsap.from(reveals, {
                 opacity: 0,
-                y: 100,
-                rotateX: -15,
-                stagger: 0.2,
-                duration: 1.2,
-                ease: 'power4.out',
+                y: 30,
+                stagger: 0.15,
+                duration: 0.8,
+                ease: 'power2.out',
                 scrollTrigger: {
                     trigger: section,
-                    start: 'top 75%',
+                    start: 'top 80%',
                 }
             });
         } else {
             gsap.from(section, {
                 opacity: 0,
-                y: 50,
-                duration: 1,
+                y: 20,
+                duration: 0.8,
                 scrollTrigger: {
                     trigger: section,
                     start: 'top 85%',
@@ -99,39 +98,32 @@ function initGSAP() {
         }
     });
 
-    // Hero Text Animation
+    // Hero Text Animation - made more subtle
     gsap.from('.hero-content h1', {
         opacity: 0,
-        y: 100,
-        duration: 1.5,
-        delay: 0.5,
-        ease: 'power4.out'
+        y: 40,
+        duration: 1.2,
+        delay: 0.2,
+        ease: 'power3.out'
     });
 
     gsap.from('.hero-content p', {
         opacity: 0,
-        y: 50,
-        duration: 1,
-        delay: 1,
-        ease: 'power3.out'
+        y: 20,
+        duration: 0.8,
+        delay: 0.6,
+        ease: 'power2.out'
     });
 
     gsap.from('.hero-cta', {
         opacity: 0,
-        scale: 0.8,
-        duration: 1,
-        delay: 1.3,
-        ease: 'back.out(1.7)'
+        scale: 0.95,
+        duration: 0.8,
+        delay: 0.8,
+        ease: 'power2.out'
     });
 
-    // Hero Floating Magic
-    gsap.to('.hero-content', {
-        y: 20,
-        repeat: -1,
-        yoyo: true,
-        duration: 3,
-        ease: 'sine.inOut'
-    });
+    // Hero Floating Magic - disabled to improve professional readability
 }
 
 // Snowfall Particle System
@@ -226,57 +218,9 @@ function initMobileMenu() {
     });
 }
 
-// 3D Tilt Effect
+// 3D Tilt Effect - Handled via CSS hover transitions for a cleaner, modern experience
 function init3DTilt() {
-    const cards = document.querySelectorAll('.tilt-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 8;
-            const rotateY = (centerX - x) / 8;
-            
-            gsap.to(card, {
-                rotateX: rotateX,
-                rotateY: rotateY,
-                scale: 1.05,
-                duration: 0.5,
-                ease: 'power2.out',
-                transformPerspective: 1000
-            });
-
-            // Glint effect
-            const glint = card.querySelector('.card-glint');
-            if (glint) {
-                gsap.to(glint, {
-                    x: (x / rect.width) * 100 + '%',
-                    y: (y / rect.height) * 100 + '%',
-                    opacity: 0.4,
-                    duration: 0.2
-                });
-            }
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                rotateX: 0,
-                rotateY: 0,
-                scale: 1,
-                duration: 0.5,
-                ease: 'power2.out'
-            });
-            const glint = card.querySelector('.card-glint');
-            if (glint) {
-                gsap.to(glint, { opacity: 0, duration: 0.5 });
-            }
-        });
-    });
+    // Disabled JS-based 3D tilt animation to reduce "AI-generated" feeling.
 }
 
 // Theme and RTL Logic
@@ -343,28 +287,13 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Elite Frost Preloader
+// Elite Frost Preloader - Disabled for instant page loads
 function initPreloader() {
     const preloader = document.getElementById('preloader');
-    const progress = document.querySelector('.preloader-progress');
-    
-    if (!preloader) return;
-
-    // Simulate loading progress
-    let width = 0;
-    const interval = setInterval(() => {
-        if (width >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-            }, 500);
-        } else {
-            width += Math.random() * 20;
-            if (width > 100) width = 100;
-            if (progress) progress.style.width = width + '%';
-        }
-    }, 100);
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }
 }
 
 // Weather Widget Logic
@@ -385,10 +314,10 @@ function initWeatherWidget() {
     if (tempEl) tempEl.innerHTML = `${randomTemp}°C`;
     if (iconEl) iconEl.innerHTML = randomIcon;
 
-    // Show widget after preloader
+    // Show widget immediately / soon (500ms delay)
     setTimeout(() => {
         widget.classList.add('visible');
-    }, 2500);
+    }, 500);
 }
 
 // Interactive Video Hero

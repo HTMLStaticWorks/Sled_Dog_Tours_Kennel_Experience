@@ -84,14 +84,14 @@
             </a>
 
             <!-- Desktop Links & Icons -->
-            <div class="hidden lg:flex space-x-8 items-center font-medium">
-                <a href="index.html" class="hover:text-ice transition-colors">Home</a>
-                <a href="home2.html" class="hover:text-ice transition-colors">Home 2</a>
-                <a href="about.html" class="hover:text-ice transition-colors">About</a>
-                <a href="tours.html" class="hover:text-ice transition-colors">Tours</a>
-                <a href="gallery.html" class="hover:text-ice transition-colors">Gallery</a>
-                <a href="dogs.html" class="hover:text-ice transition-colors">Dogs</a>
-                <a href="contact.html" class="hover:text-ice transition-colors">Contact</a>
+            <div class="hidden xl:flex space-x-8 items-center font-medium">
+                <a href="index.html" class="hover:text-ice transition-colors">Basecamp</a>
+                <a href="home2.html" class="hover:text-ice transition-colors">The Saga</a>
+                <a href="about.html" class="hover:text-ice transition-colors">Our Pack</a>
+                <a href="tours.html" class="hover:text-ice transition-colors">Explore Tours</a>
+                <a href="gallery.html" class="hover:text-ice transition-colors">Trail Views</a>
+                <a href="dogs.html" class="hover:text-ice transition-colors">Meet the Huskies</a>
+                <a href="contact.html" class="hover:text-ice transition-colors">Join the Pack</a>
 
                 <!-- Icons Group -->
                 <div class="flex items-center space-x-3 ml-4 border-l border-white/10 pl-6">
@@ -113,11 +113,11 @@
                         <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path>
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                         </svg>
                     </button>
                     <!-- Book Now Icon -->
-                    <a href="booking.html" class="p-2.5 btn-premium group" title="Book Now">
+                    <a href="booking.html" class="p-2.5 btn-premium group" title="Book a Ride">
                         <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -129,7 +129,7 @@
             </div>
 
             <!-- Burger -->
-            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+            <button class="burger-menu xl:hidden flex flex-col space-y-1.5 focus:outline-none">
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
@@ -138,14 +138,14 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu lg:hidden">
-        <a href="index.html" class="text-2xl py-4 hover:text-ice">Home</a>
-        <a href="home2.html" class="text-2xl py-4 hover:text-ice">Home 2</a>
-        <a href="about.html" class="text-2xl py-4 hover:text-ice">About</a>
-        <a href="tours.html" class="text-2xl py-4 hover:text-ice">Tours</a>
-        <a href="gallery.html" class="text-2xl py-4 hover:text-ice">Gallery</a>
-        <a href="dogs.html" class="text-2xl py-4 hover:text-ice">Dogs</a>
-        <a href="contact.html" class="text-2xl py-4 hover:text-ice">Contact</a>
+    <div class="mobile-menu xl:hidden">
+        <a href="index.html" class="text-2xl py-4 hover:text-ice">Basecamp</a>
+        <a href="home2.html" class="text-2xl py-4 hover:text-ice">The Saga</a>
+        <a href="about.html" class="text-2xl py-4 hover:text-ice">Our Pack</a>
+        <a href="tours.html" class="text-2xl py-4 hover:text-ice">Explore Tours</a>
+        <a href="gallery.html" class="text-2xl py-4 hover:text-ice">Trail Views</a>
+        <a href="dogs.html" class="text-2xl py-4 hover:text-ice">Meet the Huskies</a>
+        <a href="contact.html" class="text-2xl py-4 hover:text-ice">Join the Pack</a>
 
         <!-- Mobile Icons -->
         <div class="flex space-x-4 mt-10">
@@ -159,7 +159,7 @@
             <button id="rtl-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path>
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                 </svg>
             </button>
             <a href="booking.html" class="p-5 btn-premium">
@@ -174,15 +174,21 @@
 
     <!-- Hero Section -->
     <section class="h-screen relative flex items-center justify-center text-center px-4 overflow-hidden">
-        <!-- Interactive Video Hero -->
-        <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
+        <!-- Interactive Video Hero with Sled Dog Background Image -->
+        <div class="hero-video-container bg-cover bg-center"
+            style="background-image: url('image/WhatsApp Image 2026-05-09 at 3.18.58 PM.jpeg');">
+            <!-- Full-width Sled Dog Visual Overlay -->
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.58 PM.jpeg" alt="Sled Dog Expedition"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 z-0 select-none pointer-events-none">
+            <!-- Dynamic Snowy Landscape Overlay -->
+            <video autoplay muted loop playsinline
+                class="hero-video opacity-25 mix-blend-screen relative z-10 select-none pointer-events-none">
                 <source
                     src="https://assets.mixkit.co/videos/preview/mixkit-arctic-landscape-with-mountains-and-snow-40012-large.mp4"
                     type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-bg/40 to-primary-bg"></div>
-            <div class="stars-overlay opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-bg/40 to-primary-bg z-20"></div>
+            <div class="stars-overlay opacity-20 z-20"></div>
         </div>
 
         <div class="relative z-10 hero-content max-w-4xl">
@@ -302,66 +308,120 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-20 relative overflow-hidden bg-section">
-        <div class="absolute right-0 top-0 w-1/2 h-full opacity-10">
-            <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM.jpeg" alt="Huskies"
-                class="w-full h-full object-cover grayscale">
-        </div>
-        <div class="container flex flex-col md:flex-row items-center relative z-10">
-            <div class="md:w-1/2 pr-0 md:pr-12 mb-12 md:mb-0">
-                <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8 leading-tight">The <span
-                        class="text-primary-accent">Elite</span> Standard of Dog Care</h2>
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 glass flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-primary-accent" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2">Safety First</h4>
-                            <p class="text-muted">Top-tier equipment and rigorous safety protocols for every expedition.
-                            </p>
-                        </div>
+    <!-- Why Choose Us - Redesigned Immersive Full-Width Split Layout -->
+    <section class="py-0 relative overflow-hidden bg-section flex flex-col md:flex-row items-stretch min-h-[80vh]">
+        <!-- Left Side: Content Box with generous padding -->
+        <div class="w-full md:w-1/2 px-6 md:px-20 py-24 flex flex-col justify-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-8 leading-tight">The <span
+                    class="text-primary-accent">Elite</span> Standard of Dog Care</h2>
+            <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 glass flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 glass flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-primary-accent" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2">Dog Welfare</h4>
-                            <p class="text-muted">Our dogs are our family. Professional vets and nutritionists on site.
-                            </p>
-                        </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Safety First</h4>
+                        <p class="text-muted">Top-tier equipment and rigorous safety protocols for every expedition.</p>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 glass flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-primary-accent" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2">Expert Mushers</h4>
-                            <p class="text-muted">Certified professionals with decades of Arctic racing experience.</p>
-                        </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 glass flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Dog Welfare</h4>
+                        <p class="text-muted">Our dogs are our family. Professional vets and nutritionists on site.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 glass flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Expert Mushers</h4>
+                        <p class="text-muted">Certified professionals with decades of Arctic racing experience.</p>
                     </div>
                 </div>
             </div>
-            <div class="md:w-1/2">
-                <div class="glass p-2 relative overflow-hidden">
-                    <img src="image/WhatsApp Image 2026-05-09 at 3.18.56 PM.jpeg" alt="Musher"
-                        class="rounded-[20px] w-full">
+        </div>
+
+        <!-- Right Side: Immersive Full-Width Sled Dog Image -->
+        <div class="w-full md:w-1/2 relative min-h-[40vh] md:min-h-auto">
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.56 PM.jpeg" alt="Musher and Sled Dogs"
+                class="absolute inset-0 w-full h-full object-cover">
+            <!-- Overlay to make the image transition elegantly to the left side bg -->
+            <div class="absolute inset-0 bg-gradient-to-r from-section via-transparent to-transparent hidden md:block">
+            </div>
+        </div>
+    </section>
+
+    <!-- Immersive Full-Width Wilderness Showcase Grid -->
+    <section class="py-0 relative overflow-hidden bg-primary">
+        <div class="stars-overlay opacity-15"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-h-[50vh]">
+            <!-- Item 1: Sled Adventure -->
+            <div class="relative overflow-hidden group h-[400px] lg:h-auto min-h-[350px]">
+                <img src="image/WhatsApp Image 2026-05-09 at 3.18.58 PM.jpeg" alt="Sled Dog Trail Run"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-10 left-10 z-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary-accent mb-2 block">The
+                        Trail</span>
+                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Wilderness
+                        Run</h4>
+                    <p class="text-sm text-soft/80 max-w-xs font-light">Feel the speed of a synchronized dog team
+                        carving through pristine powder.</p>
+                </div>
+            </div>
+            <!-- Item 2: Kennel Life -->
+            <div class="relative overflow-hidden group h-[400px] lg:h-auto min-h-[350px]">
+                <img src="image/WhatsApp Image 2026-05-09 at 3.19.00 PM (1).jpeg" alt="Kennel Experience"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-10 left-10 z-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-aurora mb-2 block">Our Home</span>
+                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Kennel
+                        Life</h4>
+                    <p class="text-sm text-soft/80 max-w-xs font-light">Bond with 120+ happy, friendly athletes at our
+                        sustainable wilderness facility.</p>
+                </div>
+            </div>
+            <!-- Item 3: Snow Trail Highlights -->
+            <div class="relative overflow-hidden group h-[400px] lg:h-auto min-h-[350px]">
+                <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM (1).jpeg" alt="Snow Trail Highlights"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-10 left-10 z-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary-accent mb-2 block">Arctic
+                        Scenery</span>
+                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Snow Trail
+                        Fjords</h4>
+                    <p class="text-sm text-soft/80 max-w-xs font-light">Traverse magnificent mountain plateaus with
+                        breath-taking views of frozen fjords.</p>
+                </div>
+            </div>
+            <!-- Item 4: Happy Huskies -->
+            <div class="relative overflow-hidden group h-[400px] lg:h-auto min-h-[350px]">
+                <img src="image/WhatsApp Image 2026-05-09 at 3.19.00 PM.jpeg" alt="Happy Husky Puppy"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-10 left-10 z-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-aurora mb-2 block">Alpha Bond</span>
+                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Kennel
+                        Bond</h4>
+                    <p class="text-sm text-soft/80 max-w-xs font-light">Connect deeply with our affectionate pups and
+                        experience their joyous spirit.</p>
                 </div>
             </div>
         </div>
@@ -382,7 +442,7 @@
                         alt="Sarah Jenkins" class="w-full h-full object-cover object-center scale-110">
                 </div>
                 <p class="italic text-muted mb-6">"The night tour was life-changing. Seeing the Aurora while gliding
-                    through the silent forest was magical."</p>
+                    through the silent forest."</p>
                 <h5 class="font-bold">Sarah Jenkins</h5>
                 <span class="text-aurora text-xs uppercase tracking-widest">Global Explorer</span>
             </div>
@@ -413,19 +473,21 @@
         </div>
     </section>
 
-    <!-- New Section 1: The Arctic Ecosystem -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="stars-overlay opacity-10"></div>
-        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div class="glass p-2 order-2 lg:order-1">
-                <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM.jpeg" alt="Arctic Nature"
-                    class="rounded-[20px] w-full">
-            </div>
-            <div class="order-1 lg:order-2">
+    <!-- New Section 1: The Arctic Ecosystem - Redesigned Parallax Showcase -->
+    <section class="py-40 relative overflow-hidden min-h-[70vh] flex items-center">
+        <!-- Full-width Parallax Background Visual -->
+        <div class="absolute inset-0 z-0">
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM.jpeg" alt="Arctic Wilderness"
+                class="w-full h-full object-cover parallax-img scale-110">
+            <!-- Strong dark vignette overlay to ensure text is 100% readable -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
+        </div>
+        <div class="container relative z-10">
+            <div class="max-w-xl glass p-10 md:p-14 border border-white/10 shadow-2xl backdrop-blur-2xl">
                 <span class="text-ice font-bold uppercase tracking-[0.5em] mb-4 block">The Wilderness</span>
-                <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8">Respecting the <span
+                <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-6 leading-tight">Respecting the <span
                         class="text-ice">Ecosystem</span></h2>
-                <p class="text-soft text-lg mb-8 font-light leading-relaxed">
+                <p class="text-soft text-base mb-8 font-light leading-relaxed">
                     The Arctic is more than a backdrop; it is a delicate masterpiece. Our tours are designed to leave
                     zero footprint, ensuring that the pristine silence of the frozen fjords remains undisturbed for
                     generations to come.

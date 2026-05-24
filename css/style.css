@@ -6,10 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 :root {
-    /* Primary Backgrounds - Realistic Deep Arctic Darks */
-    --primary-bg: #0A1220;
-    --secondary-bg: #111C2D;
-    --section-bg: #162235;
+    /* Primary Backgrounds - Pure Black & Rich Dark Greys */
+    --primary-bg: #000000;
+    --secondary-bg: #121212;
+    --section-bg: #1C1C1C;
     
     /* Luxury Typography Colors */
     --main-text: #F8FBFF;
@@ -19,23 +19,23 @@
     /* Realistic Arctic Accents */
     --primary-accent: #7DD3FC;
     --secondary-accent: #B8F3FF;
-    --aurora-accent: #6EE7B7;
+    --aurora-accent: #7DD3FC;
     --hover-highlight: #CFFAFE;
     
-    /* Premium Glassmorphism */
-    --glass-card: rgba(18, 28, 45, 0.68);
+    /* Premium Glassmorphism - Grey glass for black/grey backgrounds */
+    --glass-card: rgba(20, 20, 20, 0.68);
     --glass-border: rgba(255, 255, 255, 0.08);
     --strong-border: rgba(255, 255, 255, 0.16);
     
     /* Cinematic Shadows */
-    --dark-shadow: rgba(0, 0, 0, 0.45);
+    --dark-shadow: rgba(0, 0, 0, 0.55);
     --glow-shadow: rgba(125, 211, 252, 0.18);
     
     /* Weather-Inspired Gradients */
-    --arctic-gradient: linear-gradient(135deg, #60A5FA, #7DD3FC, #6EE7B7);
+    --arctic-gradient: linear-gradient(135deg, #60A5FA, #7DD3FC);
     
     /* Legacy Mappings */
-    --arctic-dark: #0A1220;
+    --arctic-dark: #121212;
     --snow-white: #F8FBFF;
     --ice-blue: #7DD3FC;
     --glacier-cyan: #B8F3FF;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-nav {
-    background: rgba(10, 18, 32, 0.85);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
@@ -192,12 +192,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Form Elements */
 select option {
-    background-color: #111C2D !important;
+    background-color: #121212 !important;
     color: #ffffff !important;
 }
 
 select:focus {
-    background-color: #111C2D !important;
+    background-color: #121212 !important;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -237,11 +237,14 @@ section {
 .card-premium {
     padding: 40px;
     text-align: center;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .card-premium:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px var(--dark-shadow), 0 0 20px var(--glow-shadow);
 }
 
 /* Mobile Nav */
@@ -327,7 +330,17 @@ section {
 .tilt-card {
     position: relative;
     overflow: hidden;
-    transform-style: preserve-3d;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tilt-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px var(--dark-shadow), 0 0 20px var(--glow-shadow);
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}
+.light-mode .tilt-card:hover {
+    border-color: rgba(0, 0, 0, 0.2) !important;
 }
 .card-glint {
     position: absolute;
@@ -362,6 +375,7 @@ section {
 
 /* --- Elite Frost Preloader --- */
 #preloader {
+    display: none !important;
     position: fixed;
     inset: 0;
     background: #0B1120;
@@ -507,40 +521,57 @@ section {
 
 /* --- Theme & RTL Support --- */
 .light-mode {
-    background-color: #f0f7ff !important;
-    color: #000000 !important;
-    --primary-bg: #f0f7ff;
-    --secondary-bg: #e0f2fe;
-    --section-bg: #f8fbff;
-    --main-text: #000000;
-    --soft-text: #111111;
-    --muted-text: #333333;
-    --frozen-gray: #000000;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    --primary-bg: #ffffff;
+    --secondary-bg: #f8fafc;
+    --section-bg: #f1f5f9;
+    --main-text: #0f172a;
+    --soft-text: #334155;
+    --muted-text: #475569;
+    --frozen-gray: #334155;
 }
 
 .light-mode .glass, .light-mode .glass-nav {
-    background: rgba(255, 255, 255, 0.75) !important;
-    backdrop-filter: blur(16px);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: #0A1220 !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px);
+    border-color: rgba(15, 23, 42, 0.08);
+    color: #0f172a !important;
 }
 
-.light-mode .text-white { color: #000000 !important; }
-.light-mode .text-soft { color: #111111 !important; }
-.light-mode .text-muted { color: #333333 !important; }
-.light-mode .text-frozen-gray { color: #000000 !important; }
+.light-mode .text-white { color: #0f172a !important; }
+.light-mode .text-soft { 
+    color: #334155 !important; 
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.85) !important;
+}
+.light-mode .text-muted { color: #475569 !important; }
+.light-mode .text-frozen-gray { 
+    color: #0f172a !important; 
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.85) !important;
+}
 .light-mode section { background-color: var(--section-bg); }
-.light-mode .text-ice { color: #0369a1 !important; }
+.light-mode .text-ice { 
+    color: #0284c7 !important; 
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.85) !important;
+}
 .light-mode .text-glacier { color: #0891b2 !important; }
-.light-mode .text-aurora { color: #059669 !important; }
-.light-mode .glow-text { text-shadow: none !important; }
-.light-mode .stars-overlay { opacity: 0.03; }
+.light-mode .text-aurora { 
+    color: #0284c7 !important; 
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.85) !important;
+}
+.light-mode .glow-text { 
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.98), 0 4px 30px rgba(255, 255, 255, 0.95) !important; 
+}
+.light-mode .stars-overlay { opacity: 0.02; }
 
 /* Keep-white should be blue in light mode for contrast, white in dark mode */
 .keep-white { color: #ffffff; }
 .light-mode .keep-white { color: #0369a1 !important; }
 
-.light-mode .text-primary-accent { color: #0369a1 !important; }
+.light-mode .text-primary-accent { 
+    color: #0369a1 !important; 
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.85) !important;
+}
 
 /* Improved visibility for badges on images in light mode */
 .light-mode .absolute span.bg-white\/10,
@@ -568,6 +599,20 @@ section {
 
 .light-mode .glass svg:not(.text-ice) {
     stroke: #0A1220 !important;
+}
+
+/* Light Mode Hero Readability & Image Contrast */
+.light-mode .hero-video-container::after {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.55) 100%),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, transparent 45%, rgba(255, 255, 255, 0.85) 100%) !important;
+}
+.light-mode .hero-video-container img, 
+.light-mode .hero-video-container .hero-video {
+    opacity: 0.82 !important;
+    filter: brightness(0.96) contrast(1.18) saturate(1.3) !important;
+}
+.light-mode .hero-video-container {
+    background-color: #ffffff !important;
 }
 
 /* Button Light Mode Fixes */
@@ -697,3 +742,122 @@ footer .flex.space-x-4 a.glass:hover svg {
     border-color: #0ea5e9 !important;
     box-shadow: 0 15px 30px rgba(14, 165, 233, 0.3);
 }
+
+/* --- Tailwind Class Overrides for Black Background in Dark Mode & Light in Light Mode --- */
+.bg-arctic,
+.bg-primary-bg {
+    background-color: var(--primary-bg) !important;
+}
+
+.bg-arctic\/90,
+.bg-primary-bg\/90 {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.light-mode .bg-arctic\/90,
+.light-mode .bg-primary-bg\/90 {
+    background-color: rgba(240, 247, 255, 0.9) !important;
+}
+
+.bg-primary-bg\/60 {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.light-mode .bg-primary-bg\/60 {
+    background-color: rgba(240, 247, 255, 0.6) !important;
+}
+
+/* Gradient overrides to match the rich black/grey scheme */
+.from-primary-bg {
+    --tw-gradient-from: var(--primary-bg) !important;
+    --tw-gradient-to: rgba(0, 0, 0, 0) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.light-mode .from-primary-bg {
+    --tw-gradient-from: var(--primary-bg) !important;
+    --tw-gradient-to: rgba(240, 247, 255, 0) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.to-primary-bg {
+    --tw-gradient-to: var(--primary-bg) !important;
+}
+
+.via-primary-bg\/40 {
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(0, 0, 0, 0.4) 40%, var(--tw-gradient-to) !important;
+}
+.light-mode .via-primary-bg\/40 {
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(240, 247, 255, 0.4) 40%, var(--tw-gradient-to) !important;
+}
+
+.via-primary-bg\/20 {
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(0, 0, 0, 0.2) 20%, var(--tw-gradient-to) !important;
+}
+.light-mode .via-primary-bg\/20 {
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(240, 247, 255, 0.2) 20%, var(--tw-gradient-to) !important;
+}
+
+/* --- Text Readability Overlays & Contrast Enhancement --- */
+.hero-content h1,
+.hero-content p,
+.hero-content span {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 4px 35px rgba(0, 0, 0, 0.75) !important;
+}
+
+.light-mode .hero-content h1,
+.light-mode .hero-content p,
+.light-mode .hero-content span {
+    text-shadow: none !important;
+}
+
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.75) 100%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, transparent 45%, rgba(0, 0, 0, 0.85) 100%) !important;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Card Image Text Readability Overlays */
+.absolute.bottom-6.left-6 h3,
+.absolute.bottom-6.left-6 span {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+.relative .absolute.inset-0.bg-gradient-to-t {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.45) 45%, transparent 100%) !important;
+}
+
+
+/* --- Global Typography Hierarchy Refinements (Rule 3) --- */
+
+/* Enforce heading font weights below 600 globally */
+h1, h2, h3, h4, h5, h6,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    font-weight: 500 !important; /* Elegant medium weight, below 600 */
+}
+
+/* Enforce paragraphs, subheadings, soft/muted texts, and lighter text classes to stay in the 400-550 range */
+p, p *,
+.subheading,
+.text-soft,
+.text-muted,
+.text-frozen-gray,
+.text-lg, .text-xl, .text-2xl,
+span, span *,
+.font-light, .font-extralight, .font-thin {
+    font-weight: 450 !important; /* Perfect sweet spot between 400 and 550 */
+}
+
+/* Preserve clean 500-weight typography for navigation, labels, and buttons */
+nav a, nav button, .btn-premium, .btn-outline, a, button, label, input, select, textarea {
+    font-weight: 500 !important;
+}
+
+/* Strong emphasis/bold texts within paragraphs or headings are kept at 550 to stay within the 400-550 bounds */
+strong, b, .font-bold, .font-semibold, .font-extrabold, .font-black {
+    font-weight: 550 !important; /* Capped at 550 for maximum readability and correct hierarchy */
+}
+

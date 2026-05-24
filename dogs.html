@@ -66,14 +66,14 @@
             </a>
 
             <!-- Desktop Links & Icons -->
-            <div class="hidden lg:flex space-x-8 items-center font-medium">
-                <a href="index.html" class="hover:text-ice transition-colors">Home</a>
-                <a href="home2.html" class="hover:text-ice transition-colors">Home 2</a>
-                <a href="about.html" class="hover:text-ice transition-colors">About</a>
-                <a href="tours.html" class="hover:text-ice transition-colors">Tours</a>
-                <a href="gallery.html" class="hover:text-ice transition-colors">Gallery</a>
-                <a href="dogs.html" class="hover:text-ice transition-colors">Dogs</a>
-                <a href="contact.html" class="hover:text-ice transition-colors">Contact</a>
+            <div class="hidden xl:flex space-x-8 items-center font-medium">
+                <a href="index.html" class="hover:text-ice transition-colors">Basecamp</a>
+                <a href="home2.html" class="hover:text-ice transition-colors">The Saga</a>
+                <a href="about.html" class="hover:text-ice transition-colors">Our Pack</a>
+                <a href="tours.html" class="hover:text-ice transition-colors">Explore Tours</a>
+                <a href="gallery.html" class="hover:text-ice transition-colors">Trail Views</a>
+                <a href="dogs.html" class="hover:text-ice transition-colors">Meet the Huskies</a>
+                <a href="contact.html" class="hover:text-ice transition-colors">Join the Pack</a>
 
                 <!-- Icons Group -->
                 <div class="flex items-center space-x-3 ml-4 border-l border-white/10 pl-6">
@@ -95,11 +95,11 @@
                         <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path>
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                         </svg>
                     </button>
                     <!-- Book Now Icon -->
-                    <a href="booking.html" class="p-2.5 btn-premium group" title="Book Now">
+                    <a href="booking.html" class="p-2.5 btn-premium group" title="Book a Ride">
                         <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -111,7 +111,7 @@
             </div>
 
             <!-- Burger -->
-            <button class="burger-menu lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+            <button class="burger-menu xl:hidden flex flex-col space-y-1.5 focus:outline-none">
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
                 <span class="w-8 h-0.5 bg-white transition-all"></span>
@@ -120,14 +120,14 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu lg:hidden">
-        <a href="index.html" class="text-2xl py-4 hover:text-ice">Home</a>
-        <a href="home2.html" class="text-2xl py-4 hover:text-ice">Home 2</a>
-        <a href="about.html" class="text-2xl py-4 hover:text-ice">About</a>
-        <a href="tours.html" class="text-2xl py-4 hover:text-ice">Tours</a>
-        <a href="gallery.html" class="text-2xl py-4 hover:text-ice">Gallery</a>
-        <a href="dogs.html" class="text-2xl py-4 hover:text-ice">Dogs</a>
-        <a href="contact.html" class="text-2xl py-4 hover:text-ice">Contact</a>
+    <div class="mobile-menu xl:hidden">
+        <a href="index.html" class="text-2xl py-4 hover:text-ice">Basecamp</a>
+        <a href="home2.html" class="text-2xl py-4 hover:text-ice">The Saga</a>
+        <a href="about.html" class="text-2xl py-4 hover:text-ice">Our Pack</a>
+        <a href="tours.html" class="text-2xl py-4 hover:text-ice">Explore Tours</a>
+        <a href="gallery.html" class="text-2xl py-4 hover:text-ice">Trail Views</a>
+        <a href="dogs.html" class="text-2xl py-4 hover:text-ice">Meet the Huskies</a>
+        <a href="contact.html" class="text-2xl py-4 hover:text-ice">Join the Pack</a>
 
         <!-- Mobile Icons -->
         <div class="flex space-x-4 mt-10">
@@ -141,7 +141,7 @@
             <button id="rtl-toggle-mobile" class="p-5 glass rounded-2xl text-ice border border-white/10">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 5h12M9 19H3m12-7H3m15-9v18m3-3l-3 3m0 0l-3-3"></path>
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                 </svg>
             </button>
             <a href="booking.html" class="p-5 btn-premium">
@@ -197,21 +197,25 @@
         </div>
     </section>
 
-    <!-- New Section 2: Retirement Program -->
-    <section class="py-24 bg-primary text-center">
-        <div class="container max-w-4xl relative z-10">
+    <!-- New Section 2: Retirement Program - Redesigned Immersive Split Layout -->
+    <section class="py-0 relative overflow-hidden bg-primary flex flex-col md:flex-row items-stretch min-h-[75vh]">
+        <!-- Left Side: Immersive Husky Retirement Visual -->
+        <div class="w-full md:w-1/2 relative min-h-[40vh] md:min-h-auto order-2 md:order-1">
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.54 PM.jpeg" alt="Retired Husky Sled Dog"
+                class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent hidden md:block"></div>
+        </div>
+
+        <!-- Right Side: Content Box with generous padding -->
+        <div class="w-full md:w-1/2 px-6 md:px-20 py-24 flex flex-col justify-center relative z-10 order-1 md:order-2">
             <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Respect</span>
-            <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-8">Honorary <span
-                    class="text-white">Retirement</span></h2>
-            <p class="text-soft text-lg mb-10 font-light leading-relaxed mx-auto max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-6 leading-tight">Honorary <span
+                    class="text-primary-accent">Retirement</span></h2>
+            <p class="text-soft text-lg mb-10 font-light leading-relaxed max-w-xl">
                 When the racing days are over, our veterans enjoy a life of luxury. Our retirement program ensures every
                 dog has a warm home, soft beds, and endless love for their remaining years.
             </p>
-            <div class="glass p-2 mb-12 max-w-3xl mx-auto">
-                <img src="image/WhatsApp Image 2026-05-09 at 3.18.54 PM.jpeg" alt="Retired Dog"
-                    class="rounded-[30px] w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-700">
-            </div>
-            <a href="about.html" class="btn-outline px-12">Our Welfare Ethics</a>
+            <a href="about.html" class="btn-outline px-12 w-fit">Our Welfare Ethics</a>
         </div>
     </section>
 
@@ -297,9 +301,22 @@
     </section>
 
     <!-- Hero -->
-    <section class="pt-40 pb-20 relative overflow-hidden text-center forest-section">
-        <div class="stars-overlay"></div>
-        <div class="container relative z-10">
+    <section class="h-[75vh] relative flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="hero-video-container bg-cover bg-center"
+            style="background-image: url('image/WhatsApp Image 2026-05-09 at 3.18.59 PM (1).jpeg');">
+            <!-- Full-width Sled Dog Visual Overlay -->
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM (1).jpeg" alt="Huskies in Action"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 z-0 select-none pointer-events-none">
+            <!-- Dynamic Snowy Landscape Overlay -->
+            <video autoplay muted loop playsinline
+                class="hero-video opacity-20 mix-blend-screen relative z-10 select-none pointer-events-none">
+                <source
+                    src="https://assets.mixkit.co/videos/preview/mixkit-arctic-landscape-with-mountains-and-snow-40012-large.mp4"
+                    type="video/mp4">
+            </video>
+        </div>
+        <div class="stars-overlay opacity-20 z-20"></div>
+        <div class="container relative z-30">
             <h1 class="text-5xl md:text-8xl font-poppins font-black mb-8 glow-text">The <span
                     class="text-ice">Alphas</span></h1>
             <p class="text-xl text-frozen-gray max-w-2xl mx-auto uppercase tracking-[0.3em] font-light">Meet the heart
@@ -441,10 +458,6 @@
                 <div class="glass p-2 rounded-[50px] overflow-hidden">
                     <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM (1).jpeg" alt="Huskies Close"
                         class="rounded-[40px] w-full">
-                </div>
-                <div
-                    class="absolute -bottom-10 -right-10 w-48 h-48 glass rounded-full flex items-center justify-center text-center p-6 border-2 border-ice animate-pulse">
-                    <span class="text-xs font-bold uppercase tracking-widest">100% Pure Athlete</span>
                 </div>
             </div>
         </div>
