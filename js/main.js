@@ -105,13 +105,14 @@ function initActiveLink() {
         const href = link.getAttribute('href');
         if (!href) return;
         
-        const linkPath = href.split('/').pop().toLowerCase();
+        let linkPath = href.split('/').pop().toLowerCase().replace('.html', '');
+        let current = currentPath.replace('.html', '');
         
-        // Match index.html for empty paths or root
-        const isIndex = (currentPath === 'index.html' || currentPath === '');
-        const isLinkIndex = (linkPath === 'index.html');
+        // Match index for empty paths or root
+        const isIndex = (current === 'index' || current === '');
+        const isLinkIndex = (linkPath === 'index');
         
-        if (linkPath === currentPath || (isIndex && isLinkIndex)) {
+        if (linkPath === current || (isIndex && isLinkIndex)) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
