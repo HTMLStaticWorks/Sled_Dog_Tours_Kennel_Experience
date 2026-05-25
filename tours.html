@@ -191,29 +191,73 @@
     </section>
 
     <!-- New Section 3: Post-Tour Arctic Meal - Redesigned Immersive Split Layout -->
-    <section class="py-0 relative overflow-hidden bg-secondary flex flex-col lg:flex-row items-stretch min-h-[80vh]">
-        <!-- Left Side: Immersive Campfire Visual -->
-        <div class="w-full lg:w-1/2 relative min-h-[45vh] lg:min-h-auto">
-            <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM (1).jpeg" alt="Traditional Sami Lavvu Campfire Meal"
-                class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-secondary via-transparent to-transparent hidden lg:block"></div>
+    <section class="py-0 relative overflow-hidden bg-secondary flex flex-col md:flex-row items-stretch min-h-[80vh]">
+        <!-- Cozy Glow Background Accent -->
+        <div class="absolute inset-0 pointer-events-none opacity-40 z-0 bg-[radial-gradient(circle_at_80%_80%,rgba(249,115,22,0.18)_0%,transparent_60%)]"></div>
+
+        <!-- Left Side: Immersive Campfire Visual (Framed Luxury Card) -->
+        <div class="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 relative z-10">
+            <div class="glass p-3 rounded-[32px] border border-white/10 shadow-2xl w-full max-w-lg transition-transform duration-500 hover:scale-[1.02]">
+                <div class="overflow-hidden rounded-[24px] h-[350px] md:h-[450px] relative">
+                    <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM (1).jpeg" alt="Traditional Sami Lavvu Campfire Meal"
+                        class="w-full h-full object-cover object-left-bottom">
+                </div>
+            </div>
         </div>
 
         <!-- Right Side: Content Box with generous padding -->
-        <div class="w-full lg:w-1/2 px-6 lg:px-20 py-24 flex flex-col justify-center relative z-10">
-            <span class="text-aurora font-bold uppercase tracking-[0.5em] mb-4 block">Warmth</span>
-            <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-8 leading-tight">The Traditional <span
-                    class="text-primary-accent">Lavvu</span></h2>
-            <p class="text-soft text-lg mb-10 font-light leading-relaxed max-w-xl">
-                After the ride, retreat into our heated Sami Lavvu tent. Enjoy a traditional Arctic meal around the
-                fire, sharing stories of the trail as the Northern Lights dance above.
+        <div class="w-full md:w-1/2 px-6 lg:px-20 py-24 flex flex-col justify-center relative z-10">
+            <!-- Pulsing Cozy Campfire Badge -->
+            <span class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold uppercase tracking-[0.3em] text-[10px] px-4 py-1.5 rounded-full mb-6 w-fit select-none">
+                <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"></span>
+                Campfire Experience
+            </span>
+
+            <!-- Fire-Glowing Header -->
+            <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-6 leading-tight">The Traditional <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-300 drop-shadow-[0_0_15px_rgba(251,146,60,0.2)]">Lavvu</span></h2>
+            
+            <p class="text-soft text-lg mb-8 font-light leading-relaxed max-w-xl">
+                After the ride, retreat into the comforting warmth of our heated Sami Lavvu tent. Gather around the crackling open hearth to savor a traditional, home-cooked Arctic meal, exchange stories of the snowy trails, and watch the legendary Northern Lights dance across the starry sky.
             </p>
-            <div class="flex gap-4 max-w-md">
-                <div class="w-1/2 glass p-1">
-                    <img src="image/WhatsApp Image 2026-05-09 at 3.19.01 PM (2).jpeg" class="rounded-xl w-full h-32 object-cover">
+
+            <!-- Immersive Cozy Features Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-xl">
+                <div class="glass p-4 border border-white/5 hover:border-orange-500/20 transition-all duration-300 flex items-center gap-3.5 group cursor-default">
+                    <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                        🔥
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Cozy Hearth</h4>
+                        <p class="text-xs text-muted">Open bonfire warmth</p>
+                    </div>
                 </div>
-                <div class="w-1/2 glass p-1">
-                    <img src="image/WhatsApp Image 2026-05-09 at 3.18.55 PM.jpeg" class="rounded-xl w-full h-32 object-cover">
+                <div class="glass p-4 border border-white/5 hover:border-orange-500/20 transition-all duration-300 flex items-center gap-3.5 group cursor-default">
+                    <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                        🍲
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Arctic Cuisine</h4>
+                        <p class="text-xs text-muted">Authentic local recipes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Double Polaroid Gallery Stack -->
+            <div class="flex gap-4 max-w-xl">
+                <div class="w-1/2 relative group tilt-card glass p-1.5 rounded-[24px] border border-white/5 hover:border-orange-500/30 transition-all duration-500 shadow-2xl">
+                    <div class="overflow-hidden rounded-[18px] relative h-32">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.19.01 PM (2).jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-[9px] font-bold uppercase tracking-widest text-orange-300">Cozy Hearth</span>
+                    </div>
+                </div>
+                <div class="w-1/2 relative group tilt-card glass p-1.5 rounded-[24px] border border-white/5 hover:border-orange-500/30 transition-all duration-500 shadow-2xl">
+                    <div class="overflow-hidden rounded-[18px] relative h-32">
+                        <img src="image/WhatsApp Image 2026-05-09 at 3.18.55 PM.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-[9px] font-bold uppercase tracking-widest text-orange-300">Traditional Meal</span>
+                    </div>
                 </div>
             </div>
         </div>

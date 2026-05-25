@@ -85,11 +85,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
 }
 
-.lg\:flex a {
+.xl\:flex a, .lg\:flex a {
     position: relative;
 }
 
-.lg\:flex a.active::after {
+.xl\:flex a.active::after, .lg\:flex a.active::after {
     content: '';
     position: absolute;
     bottom: -8px;
@@ -180,15 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 30px var(--glow-shadow);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
-.reveal {
-    animation: fadeIn 1s ease forwards;
-}
 
 /* Form Elements */
 select option {
@@ -307,29 +299,10 @@ section {
     background: linear-gradient(180deg, var(--secondary-bg) 0%, var(--section-bg) 100%);
 }
 
-/* Custom Cursor */
-.custom-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: rgba(56, 189, 248, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
-}
-.custom-cursor.active {
-    width: 60px;
-    height: 60px;
-    background: rgba(56, 189, 248, 0.2);
-    border: 1px solid rgba(56, 189, 248, 0.5);
-}
 
-/* Card Glint Effect */
+
+/* Cards Hover Effect */
 .tilt-card {
-    position: relative;
-    overflow: hidden;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
                 box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
                 border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
@@ -341,17 +314,6 @@ section {
 }
 .light-mode .tilt-card:hover {
     border-color: rgba(0, 0, 0, 0.2) !important;
-}
-.card-glint {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 60%);
-    pointer-events: none;
-    opacity: 0;
-    top: -50%;
-    left: -50%;
-    z-index: 5;
 }
 
 /* Starfield Simulation */
@@ -445,6 +407,12 @@ section {
 .weather-widget.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 1023px) {
+    .weather-widget {
+        display: none !important;
+    }
 }
 
 .weather-icon {
@@ -859,5 +827,181 @@ nav a, nav button, .btn-premium, .btn-outline, a, button, label, input, select, 
 /* Strong emphasis/bold texts within paragraphs or headings are kept at 550 to stay within the 400-550 bounds */
 strong, b, .font-bold, .font-semibold, .font-extrabold, .font-black {
     font-weight: 550 !important; /* Capped at 550 for maximum readability and correct hierarchy */
+}
+
+/* Force text overlay inside dark image cards to stay light/readable in light mode */
+.light-mode .absolute.bottom-10.left-10 h4,
+.light-mode .absolute.bottom-10.left-10 p,
+.light-mode .absolute.bottom-10.left-10 span,
+.light-mode .absolute.bottom-6.left-6 h4,
+.light-mode .absolute.bottom-6.left-6 p,
+.light-mode .absolute.bottom-6.left-6 span,
+.light-mode .absolute.bottom-6.left-6 h3,
+.light-mode .absolute.bottom-6.left-6 span {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+}
+
+.light-mode .absolute.bottom-10.left-10 p,
+.light-mode .absolute.bottom-6.left-6 p {
+    color: #e2e8f0 !important;
+}
+
+.light-mode .absolute.bottom-10.left-10 span.text-aurora,
+.light-mode .absolute.bottom-10.left-10 span.text-primary-accent,
+.light-mode .absolute.bottom-6.left-6 span.text-aurora,
+.light-mode .absolute.bottom-6.left-6 span.text-primary-accent {
+    color: #38BDF8 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* ── PREMIUM REDESIGNED COMPONENTS (Immersive & Atmospheric) ── */
+
+/* Glass Overlay Cards on Showcase Images */
+.overlay-glass-card {
+    background: rgba(10, 15, 30, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.group:hover .overlay-glass-card {
+    background: rgba(10, 15, 30, 0.72);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+}
+
+.light-mode .overlay-glass-card {
+    background: rgba(255, 255, 255, 0.78) !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15) !important;
+}
+
+.light-mode .group:hover .overlay-glass-card {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(2, 132, 199, 0.35) !important;
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.25) !important;
+}
+
+.light-mode .overlay-glass-card h4 {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+.light-mode .overlay-glass-card p {
+    color: #334155 !important;
+    text-shadow: none !important;
+}
+
+.light-mode .overlay-glass-card span {
+    color: #0284c7 !important;
+    text-shadow: none !important;
+}
+
+/* Tour Premium Integrated Cards (Borderless look) */
+.tour-premium-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.tour-premium-card:hover {
+    transform: translateY(-8px);
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+.light-mode .tour-premium-card {
+    background: rgba(255, 255, 255, 0.6) !important;
+    border-color: rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+.light-mode .tour-premium-card:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(2, 132, 199, 0.2) !important;
+    box-shadow: 0 20px 40px rgba(2, 132, 199, 0.1) !important;
+}
+
+/* Sustainability Commitment Redesigned Cards */
+.commit-premium-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    transition: all 0.4s ease;
+}
+
+.commit-premium-card:hover {
+    transform: translateY(-6px);
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.05);
+}
+
+.light-mode .commit-premium-card {
+    background: rgba(255, 255, 255, 0.6) !important;
+    border-color: rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+.light-mode .commit-premium-card:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(2, 132, 199, 0.2) !important;
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.08) !important;
+}
+
+/* Redesigned Asymmetrical Testimonial Cards */
+.testimonial-card-redesign {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    transition: all 0.4s ease;
+}
+
+.testimonial-card-redesign:hover {
+    transform: translateY(-8px);
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.light-mode .testimonial-card-redesign {
+    background: rgba(255, 255, 255, 0.6) !important;
+    border-color: rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+.light-mode .testimonial-card-redesign:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(2, 132, 199, 0.2) !important;
+    box-shadow: 0 20px 40px rgba(2, 132, 199, 0.1) !important;
+}
+
+.light-mode .testimonial-card-redesign h5 {
+    color: #0f172a !important;
+}
+
+.light-mode .testimonial-card-redesign .font-serif {
+    color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Final CTA Immersive Container */
+.light-mode .final-cta-container {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border-color: rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 20px 50px rgba(2, 132, 199, 0.15) !important;
+}
+.light-mode .final-cta-container h2 {
+    color: #0f172a !important;
+}
+.light-mode .final-cta-container p {
+    color: #334155 !important;
 }
 

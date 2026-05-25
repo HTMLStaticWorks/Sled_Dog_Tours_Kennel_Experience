@@ -1,201 +1,14 @@
 /**
  * Sled Dog Tours & Kennel Experience - Core Logic
- * Animations: GSAP, ScrollTrigger
- * Effects: Snowfall, 3D Tilt
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initSnowfall();
-    initGSAP();
     initMobileMenu();
-    // init3DTilt(); // Disabled for a more professional, natural feel
-    // initPreloader(); // Disabled for instant page transitions
     initWeatherWidget();
-    initVideoHero();
     initThemeSwitcher();
-    initCustomCursor();
-    initMagicalScroll();
     initBackToTop();
     initActiveLink();
 });
-
-// Custom Premium Cursor
-function initCustomCursor() {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor hidden lg:block';
-    document.body.appendChild(cursor);
-
-    document.addEventListener('mousemove', (e) => {
-        gsap.to(cursor, {
-            x: e.clientX,
-            y: e.clientY,
-            duration: 0.1,
-            ease: 'power2.out'
-        });
-    });
-
-    const interactables = document.querySelectorAll('a, button, .tilt-card');
-    interactables.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.classList.add('active');
-            gsap.to(cursor, { scale: 1.5, duration: 0.3 });
-        });
-        el.addEventListener('mouseleave', () => {
-            cursor.classList.remove('active');
-            gsap.to(cursor, { scale: 1, duration: 0.3 });
-        });
-    });
-}
-
-// Magical Scroll Parallax
-function initMagicalScroll() {
-    const parallaxImgs = document.querySelectorAll('.parallax-img');
-    parallaxImgs.forEach(img => {
-        gsap.to(img, {
-            y: -100,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: img,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-            }
-        });
-    });
-}
-
-// GSAP Initialization
-function initGSAP() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Fade in sections on scroll with staggering - simplified for professional aesthetic
-    const sections = gsap.utils.toArray('section');
-    sections.forEach(section => {
-        const reveals = section.querySelectorAll('.reveal-item');
-        if (reveals.length > 0) {
-            gsap.from(reveals, {
-                opacity: 0,
-                y: 30,
-                stagger: 0.15,
-                duration: 0.8,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
-                }
-            });
-        } else {
-            gsap.from(section, {
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
-        }
-    });
-
-    // Hero Text Animation - made more subtle
-    gsap.from('.hero-content h1', {
-        opacity: 0,
-        y: 40,
-        duration: 1.2,
-        delay: 0.2,
-        ease: 'power3.out'
-    });
-
-    gsap.from('.hero-content p', {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        delay: 0.6,
-        ease: 'power2.out'
-    });
-
-    gsap.from('.hero-cta', {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.8,
-        delay: 0.8,
-        ease: 'power2.out'
-    });
-
-    // Hero Floating Magic - disabled to improve professional readability
-}
-
-// Snowfall Particle System
-function initSnowfall() {
-    const canvas = document.createElement('canvas');
-    canvas.id = 'snowfall-canvas';
-    document.body.appendChild(canvas);
-    
-    const ctx = canvas.getContext('2d');
-    let width, height, snowflakes = [];
-
-    const resize = () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', resize);
-    resize();
-
-    class Snowflake {
-        constructor() {
-            this.reset();
-        }
-
-        reset() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * -height;
-            this.size = Math.random() * 3 + 1;
-            this.speed = Math.random() * 1 + 0.5;
-            this.velX = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.3;
-        }
-
-        update() {
-            this.y += this.speed;
-            this.x += this.velX;
-
-            if (this.y > height) {
-                this.reset();
-            }
-        }
-
-        draw() {
-            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-
-    for (let i = 0; i < 200; i++) {
-        snowflakes.push(new Snowflake());
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        snowflakes.forEach(f => {
-            f.update();
-            f.draw();
-        });
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    // Canvas styling
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '50';
-}
 
 // Mobile Menu Logic
 function initMobileMenu() {
@@ -218,11 +31,6 @@ function initMobileMenu() {
     });
 }
 
-// 3D Tilt Effect - Handled via CSS hover transitions for a cleaner, modern experience
-function init3DTilt() {
-    // Disabled JS-based 3D tilt animation to reduce "AI-generated" feeling.
-}
-
 // Theme and RTL Logic
 function initThemeSwitcher() {
     const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
@@ -236,9 +44,6 @@ function initThemeSwitcher() {
             
             // Save preference
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            
-            // Subtle feedback
-            gsap.to(toggle, { rotate: isLight ? 180 : 0, duration: 0.5 });
         });
     });
 
@@ -254,15 +59,6 @@ function initThemeSwitcher() {
             
             // Save preference
             localStorage.setItem('dir', newDir);
-            
-            // GSAP feedback
-            gsap.to(toggle, { 
-                scale: 1.2, 
-                duration: 0.2, 
-                yoyo: true, 
-                repeat: 1,
-                ease: 'power2.inOut'
-            });
         });
     });
 
@@ -273,26 +69,6 @@ function initThemeSwitcher() {
     if (localStorage.getItem('dir') === 'rtl') {
         document.documentElement.dir = 'rtl';
         rtlToggles.forEach(t => t.classList.add('rtl-active'));
-    }
-}
-
-// Smooth Parallax for specific elements
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxLayers = document.querySelectorAll('.parallax-layer');
-    
-    parallaxLayers.forEach(layer => {
-        const speed = layer.getAttribute('data-speed') || 0.5;
-        layer.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
-// Elite Frost Preloader - Disabled for instant page loads
-function initPreloader() {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        preloader.style.visibility = 'hidden';
     }
 }
 
@@ -318,23 +94,6 @@ function initWeatherWidget() {
     setTimeout(() => {
         widget.classList.add('visible');
     }, 500);
-}
-
-// Interactive Video Hero
-function initVideoHero() {
-    const video = document.querySelector('.hero-video');
-    if (!video) return;
-
-    // Simple interaction: slightly speed up on hover
-    const hero = video.closest('section');
-    if (hero) {
-        hero.addEventListener('mouseenter', () => {
-            gsap.to(video, { playbackRate: 1.5, duration: 1 });
-        });
-        hero.addEventListener('mouseleave', () => {
-            gsap.to(video, { playbackRate: 1.0, duration: 1 });
-        });
-    }
 }
 
 // Active Link Highlighter
@@ -387,17 +146,6 @@ function initBackToTop() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
-        });
-        
-        // GSAP flair
-        gsap.to(btn, {
-            y: -20,
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power4.in',
-            onComplete: () => {
-                gsap.to(btn, { y: 0, opacity: 1, duration: 0.3 });
-            }
         });
     });
 }

@@ -31,32 +31,11 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body class="bg-arctic text-white overflow-x-hidden">
 
-    <!-- Elite Frost Preloader -->
-    <div id="preloader">
-        <div class="preloader-frost"></div>
-        <div class="preloader-content">
-            <div class="preloader-logo font-poppins flex items-center gap-3">
-                <svg class="w-12 h-12 text-ice animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
-                    </path>
-                </svg>
-                BREEZE
-            </div>
-            <div class="preloader-bar">
-                <div class="preloader-progress"></div>
-            </div>
-            <p class="text-xs uppercase tracking-[0.4em] mt-4 opacity-50">Calibrating Expedition</p>
-        </div>
-    </div>
+
 
     <!-- Weather Widget -->
     <div id="weather-widget" class="weather-widget glass shadow-2xl">
@@ -209,24 +188,24 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-20 relative z-10 bg-primary">
-        <div class="container">
+    <section class="py-16 relative z-10 bg-primary border-y border-white/5">
+        <div class="container max-w-5xl">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="glass p-8 glow-card">
-                    <h3 class="text-4xl font-extrabold text-primary-accent mb-2">120+</h3>
-                    <p class="text-muted uppercase tracking-widest text-xs">Sled Dogs</p>
+                <div class="py-4 md:border-r border-white/10 last:border-r-0">
+                    <h3 class="text-5xl font-poppins font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier drop-shadow-[0_0_15px_rgba(56,189,248,0.25)] mb-2">120+</h3>
+                    <p class="text-muted uppercase tracking-[0.2em] text-xs font-semibold">Sled Dogs</p>
                 </div>
-                <div class="glass p-8 glow-card">
-                    <h3 class="text-4xl font-extrabold text-primary-accent mb-2">15k</h3>
-                    <p class="text-muted uppercase tracking-widest text-xs">Miles Traveled</p>
+                <div class="py-4 md:border-r border-white/10 last:border-r-0">
+                    <h3 class="text-5xl font-poppins font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier drop-shadow-[0_0_15px_rgba(56,189,248,0.25)] mb-2">15k</h3>
+                    <p class="text-muted uppercase tracking-[0.2em] text-xs font-semibold">Miles Traveled</p>
                 </div>
-                <div class="glass p-8 glow-card">
-                    <h3 class="text-4xl font-extrabold text-primary-accent mb-2">25</h3>
-                    <p class="text-muted uppercase tracking-widest text-xs">Expert Mushers</p>
+                <div class="py-4 md:border-r border-white/10 last:border-r-0">
+                    <h3 class="text-5xl font-poppins font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier drop-shadow-[0_0_15px_rgba(56,189,248,0.25)] mb-2">25</h3>
+                    <p class="text-muted uppercase tracking-[0.2em] text-xs font-semibold">Expert Mushers</p>
                 </div>
-                <div class="glass p-8 glow-card">
-                    <h3 class="text-4xl font-extrabold text-primary-accent mb-2">4.9</h3>
-                    <p class="text-muted uppercase tracking-widest text-xs">Avg Rating</p>
+                <div class="py-4">
+                    <h3 class="text-5xl font-poppins font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier drop-shadow-[0_0_15px_rgba(56,189,248,0.25)] mb-2">4.9</h3>
+                    <p class="text-muted uppercase tracking-[0.2em] text-xs font-semibold">Avg Rating</p>
                 </div>
             </div>
         </div>
@@ -236,21 +215,20 @@
     <section class="py-20 bg-secondary relative">
         <div class="stars-overlay"></div>
         <div class="container text-center mb-16 relative z-10">
-            <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-4">Elite <span
-                    class="text-primary-accent">Expeditions</span></h2>
-            <p class="text-soft max-w-xl mx-auto">Discover our most sought-after Arctic adventures, tailored for every
-                level of explorer.</p>
+            <span class="text-ice font-bold uppercase tracking-[0.4em] mb-3 block">Expeditions</span>
+            <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-4">Elite <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier">Expeditions</span></h2>
+            <p class="text-soft max-w-xl mx-auto">Discover our most sought-after Arctic adventures, tailored for every level of explorer.</p>
         </div>
 
-        <div class="container relative z-10 reveal-item">
+        <div class="container relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Tour 1 -->
-                <div class="glass overflow-hidden group tilt-card">
-                    <div class="card-glint"></div>
+                <div class="tour-premium-card group tilt-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="image/WhatsApp Image 2026-05-09 at 3.18.49 PM.jpeg" alt="Tour"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute top-4 right-4 glass px-4 py-1 text-xs font-bold uppercase">Popular</div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white border border-white/10 rounded-full px-4 py-1 text-xs font-bold uppercase">Popular</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Beginner Forest Ride</h3>
@@ -264,12 +242,11 @@
                 </div>
 
                 <!-- Tour 2 -->
-                <div class="glass overflow-hidden group tilt-card">
-                    <div class="card-glint"></div>
+                <div class="tour-premium-card group tilt-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="image/WhatsApp Image 2026-05-09 at 3.19.07 PM.jpeg" alt="Tour"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute top-4 right-4 glass px-4 py-1 text-xs font-bold uppercase">Magical</div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white border border-white/10 rounded-full px-4 py-1 text-xs font-bold uppercase">Magical</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Aurora Night Chase</h3>
@@ -283,12 +260,11 @@
                 </div>
 
                 <!-- Tour 3 -->
-                <div class="glass overflow-hidden group tilt-card">
-                    <div class="card-glint"></div>
+                <div class="tour-premium-card group tilt-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM.jpeg" alt="Tour"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute top-4 right-4 glass px-4 py-1 text-xs font-bold uppercase">Expert</div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white border border-white/10 rounded-full px-4 py-1 text-xs font-bold uppercase">Expert</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Full Day Snow Expedition</h3>
@@ -357,7 +333,7 @@
         </div>
 
         <!-- Right Side: Immersive Full-Width Sled Dog Image -->
-        <div class="w-full md:w-1/2 relative min-h-[40vh] md:min-h-auto">
+        <div class="w-full md:w-1/2 relative min-h-[45vh] md:min-h-auto">
             <img src="image/WhatsApp Image 2026-05-09 at 3.18.56 PM.jpeg" alt="Musher and Sled Dogs"
                 class="absolute inset-0 w-full h-full object-cover">
             <!-- Overlay to make the image transition elegantly to the left side bg -->
@@ -372,16 +348,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-h-[50vh]">
             <!-- Item 1: Sled Adventure -->
             <div class="relative overflow-hidden group h-[400px] lg:h-auto min-h-[350px]">
-                <img src="image/WhatsApp Image 2026-05-09 at 3.18.58 PM.jpeg" alt="Sled Dog Trail Run"
+                <img src="image/WhatsApp Image 2026-05-09 at 3.18.50 PM.jpeg" alt="Sled Dog Trail Run"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                <div class="absolute bottom-10 left-10 z-10">
-                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary-accent mb-2 block">The
-                        Trail</span>
-                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Wilderness
-                        Run</h4>
-                    <p class="text-sm text-soft/80 max-w-xs font-light">Feel the speed of a synchronized dog team
-                        carving through pristine powder.</p>
+                <div class="absolute bottom-6 left-6 right-6 z-10 overlay-glass-card">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-ice mb-1.5 block">The Trail</span>
+                    <h4 class="text-xl font-poppins font-semibold text-white uppercase tracking-wider mb-1.5 leading-tight">Wilderness Run</h4>
+                    <p class="text-sm text-soft/90 font-light leading-relaxed">Feel the speed of a synchronized dog team carving through pristine powder.</p>
                 </div>
             </div>
             <!-- Item 2: Kennel Life -->
@@ -389,12 +362,10 @@
                 <img src="image/WhatsApp Image 2026-05-09 at 3.19.00 PM (1).jpeg" alt="Kennel Experience"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                <div class="absolute bottom-10 left-10 z-10">
-                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-aurora mb-2 block">Our Home</span>
-                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Kennel
-                        Life</h4>
-                    <p class="text-sm text-soft/80 max-w-xs font-light">Bond with 120+ happy, friendly athletes at our
-                        sustainable wilderness facility.</p>
+                <div class="absolute bottom-6 left-6 right-6 z-10 overlay-glass-card">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-aurora mb-1.5 block">Our Home</span>
+                    <h4 class="text-xl font-poppins font-semibold text-white uppercase tracking-wider mb-1.5 leading-tight">Kennel Life</h4>
+                    <p class="text-sm text-soft/90 font-light leading-relaxed">Bond with 120+ happy, friendly athletes at our sustainable wilderness facility.</p>
                 </div>
             </div>
             <!-- Item 3: Snow Trail Highlights -->
@@ -402,13 +373,10 @@
                 <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM (1).jpeg" alt="Snow Trail Highlights"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                <div class="absolute bottom-10 left-10 z-10">
-                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary-accent mb-2 block">Arctic
-                        Scenery</span>
-                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Snow Trail
-                        Fjords</h4>
-                    <p class="text-sm text-soft/80 max-w-xs font-light">Traverse magnificent mountain plateaus with
-                        breath-taking views of frozen fjords.</p>
+                <div class="absolute bottom-6 left-6 right-6 z-10 overlay-glass-card">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-ice mb-1.5 block">Arctic Scenery</span>
+                    <h4 class="text-xl font-poppins font-semibold text-white uppercase tracking-wider mb-1.5 leading-tight">Snow Trail Fjords</h4>
+                    <p class="text-sm text-soft/90 font-light leading-relaxed">Traverse magnificent mountain plateaus with breath-taking views of frozen fjords.</p>
                 </div>
             </div>
             <!-- Item 4: Happy Huskies -->
@@ -416,59 +384,56 @@
                 <img src="image/WhatsApp Image 2026-05-09 at 3.19.00 PM.jpeg" alt="Happy Husky Puppy"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                <div class="absolute bottom-10 left-10 z-10">
-                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-aurora mb-2 block">Alpha Bond</span>
-                    <h4 class="text-2xl font-poppins font-extrabold text-white uppercase tracking-wider mb-2">Kennel
-                        Bond</h4>
-                    <p class="text-sm text-soft/80 max-w-xs font-light">Connect deeply with our affectionate pups and
-                        experience their joyous spirit.</p>
+                <div class="absolute bottom-6 left-6 right-6 z-10 overlay-glass-card">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-aurora mb-1.5 block">Alpha Bond</span>
+                    <h4 class="text-xl font-poppins font-semibold text-white uppercase tracking-wider mb-1.5 leading-tight">Kennel Bond</h4>
+                    <p class="text-sm text-soft/90 font-light leading-relaxed">Connect deeply with our affectionate pups and experience their joyous spirit.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="py-20 bg-primary reveal-item">
+    <section class="py-20 bg-primary relative overflow-hidden">
+        <div class="stars-overlay opacity-10"></div>
         <div class="container text-center mb-16">
+            <span class="text-ice font-bold uppercase tracking-[0.4em] mb-3 block">Reviews</span>
             <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-4">Adventurer <span
-                    class="text-primary-accent">Stories</span></h2>
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier">Stories</span></h2>
         </div>
-        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Sarah Jenkins -->
-            <div class="glass p-10 flex flex-col items-center text-center glow-card tilt-card">
-                <div class="card-glint"></div>
-                <div class="w-20 h-20 rounded-full mb-6 overflow-hidden border-2 border-primary-accent/30">
+            <div class="relative bg-white/5 border border-white/5 rounded-3xl p-8 hover:border-ice/20 transition-all duration-300 flex flex-col items-center text-center testimonial-card-redesign">
+                <div class="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none">&ldquo;</div>
+                <div class="w-20 h-20 rounded-full mb-6 overflow-hidden border-2 border-ice/30 shadow-[0_0_15px_rgba(56,189,248,0.2)]">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBmpq8s_S3Lfe2bGwec5-TaOzXnh_7d4KVjQ&s"
                         alt="Sarah Jenkins" class="w-full h-full object-cover object-center scale-110">
                 </div>
-                <p class="italic text-muted mb-6">"The night tour was life-changing. Seeing the Aurora while gliding
-                    through the silent forest."</p>
-                <h5 class="font-bold">Sarah Jenkins</h5>
-                <span class="text-aurora text-xs uppercase tracking-widest">Global Explorer</span>
+                <p class="italic text-soft mb-6 relative z-10 leading-relaxed font-light">"The night tour was life-changing. Seeing the Aurora while gliding through the silent forest."</p>
+                <h5 class="font-semibold text-lg text-white">Sarah Jenkins</h5>
+                <span class="text-ice text-xs uppercase tracking-widest mt-1.5 block font-medium">Global Explorer</span>
             </div>
             <!-- David Chen -->
-            <div class="glass p-10 flex flex-col items-center text-center glow-card tilt-card">
-                <div class="card-glint"></div>
-                <div class="w-20 h-20 rounded-full mb-6 overflow-hidden border-2 border-primary-accent/30">
+            <div class="relative bg-white/5 border border-white/5 rounded-3xl p-8 hover:border-ice/20 transition-all duration-300 flex flex-col items-center text-center testimonial-card-redesign">
+                <div class="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none">&ldquo;</div>
+                <div class="w-20 h-20 rounded-full mb-6 overflow-hidden border-2 border-ice/30 shadow-[0_0_15px_rgba(56,189,248,0.2)]">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc7eV_7l5lJ1XzDpO284-W4KR4ESjreD2Z5g&s"
                         alt="David Chen" class="w-full h-full object-cover object-center scale-110">
                 </div>
-                <p class="italic text-muted mb-6">"Expertly organized. The safety training was clear, and driving the
-                    sled was a thrilling challenge."</p>
-                <h5 class="font-bold">David Chen</h5>
-                <span class="text-aurora text-xs uppercase tracking-widest">Travel Photographer</span>
+                <p class="italic text-soft mb-6 relative z-10 leading-relaxed font-light">"Expertly organized. The safety training was clear, and driving the sled was a thrilling challenge."</p>
+                <h5 class="font-semibold text-lg text-white">David Chen</h5>
+                <span class="text-ice text-xs uppercase tracking-widest mt-1.5 block font-medium">Travel Photographer</span>
             </div>
             <!-- Marcus Thorne -->
-            <div class="glass p-10 flex flex-col items-center text-center glow-card tilt-card">
-                <div class="card-glint"></div>
-                <div class="w-20 h-20 rounded-full mb-6 overflow-hidden border-2 border-primary-accent/30">
+            <div class="relative bg-white/5 border border-white/5 rounded-3xl p-8 hover:border-ice/20 transition-all duration-300 flex flex-col items-center text-center testimonial-card-redesign">
+                <div class="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none">&ldquo;</div>
+                <div class="w-20 h-20 rounded-full mb-6 overflow-hidden border-2 border-ice/30 shadow-[0_0_15px_rgba(56,189,248,0.2)]">
                     <img src="https://pbs.twimg.com/profile_images/1930021940569260032/qqsk6dw5.jpg" alt="Marcus Thorne"
                         class="w-full h-full object-cover object-center scale-110">
                 </div>
-                <p class="italic text-muted mb-6">"An absolutely spiritual experience. The bond between the mushers and
-                    dogs is incredible.penny."</p>
-                <h5 class="font-bold">Marcus Thorne</h5>
-                <span class="text-aurora text-xs uppercase tracking-widest">Adventure Blogger</span>
+                <p class="italic text-soft mb-6 relative z-10 leading-relaxed font-light">"An absolutely spiritual experience. The bond between the mushers and dogs is incredible."</p>
+                <h5 class="font-semibold text-lg text-white">Marcus Thorne</h5>
+                <span class="text-ice text-xs uppercase tracking-widest mt-1.5 block font-medium">Adventure Blogger</span>
             </div>
         </div>
     </section>
@@ -478,7 +443,7 @@
         <!-- Full-width Parallax Background Visual -->
         <div class="absolute inset-0 z-0">
             <img src="image/WhatsApp Image 2026-05-09 at 3.18.59 PM.jpeg" alt="Arctic Wilderness"
-                class="w-full h-full object-cover parallax-img scale-110">
+                class="w-full h-full object-cover scale-110">
             <!-- Strong dark vignette overlay to ensure text is 100% readable -->
             <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
         </div>
@@ -508,82 +473,79 @@
     </section>
 
     <!-- New Section 2: Sustainability Commitment -->
-    <section class="py-24 bg-secondary/50 relative">
+    <section class="py-24 bg-secondary/30 relative">
         <div class="container text-center">
             <span class="text-ice font-bold uppercase tracking-[0.5em] mb-4 block">Our Promise</span>
-            <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-12">Sustainable <span
-                    class="text-ice">Luxury</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-item">
-                <div class="glass overflow-hidden hover:border-ice/30 transition-all tilt-card flex flex-col">
-                    <div class="card-glint"></div>
+            <h2 class="text-4xl md:text-5xl font-poppins font-extrabold mb-12">Sustainable <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-ice to-glacier">Luxury</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white/5 border border-white/5 rounded-3xl overflow-hidden hover:border-ice/25 transition-all duration-300 flex flex-col commit-premium-card">
                     <div class="h-48 overflow-hidden">
                         <img src="image/renewable-energy.png" alt="Renewable Energy"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
-                    <div class="p-10 text-center">
-                        <div class="text-ice mb-6"><svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor"
+                    <div class="p-8 text-center flex-1 flex flex-col justify-center">
+                        <div class="text-ice mb-4"><svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                                     d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
                                 </path>
                             </svg></div>
-                        <h4 class="text-xl font-bold mb-4">Renewable Energy</h4>
-                        <p class="text-muted text-sm">Our base camps are powered by 100% solar and wind energy harvested
-                            from the Arctic winds.</p>
+                        <h4 class="text-xl font-bold mb-3">Renewable Energy</h4>
+                        <p class="text-muted text-sm leading-relaxed">Our base camps are powered by 100% solar and wind energy harvested from the Arctic winds.</p>
                     </div>
                 </div>
-                <div class="glass overflow-hidden hover:border-ice/30 transition-all tilt-card flex flex-col">
-                    <div class="card-glint"></div>
+                <!-- Card 2 -->
+                <div class="bg-white/5 border border-white/5 rounded-3xl overflow-hidden hover:border-ice/25 transition-all duration-300 flex flex-col commit-premium-card">
                     <div class="h-48 overflow-hidden">
                         <img src="image/local-sourcing.png" alt="Local Sourcing"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
-                    <div class="p-10 text-center">
-                        <div class="text-ice mb-6"><svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor"
+                    <div class="p-8 text-center flex-1 flex flex-col justify-center">
+                        <div class="text-ice mb-4"><svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                                     d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
                                 </path>
                             </svg></div>
-                        <h4 class="text-xl font-bold mb-4">Local Sourcing</h4>
-                        <p class="text-muted text-sm">Every meal and material is sourced from local Tromsø artisans to
-                            support the community.</p>
+                        <h4 class="text-xl font-bold mb-3">Local Sourcing</h4>
+                        <p class="text-muted text-sm leading-relaxed">Every meal and material is sourced from local Tromsø artisans to support the community.</p>
                     </div>
                 </div>
-                <div class="glass overflow-hidden hover:border-ice/30 transition-all tilt-card flex flex-col">
-                    <div class="card-glint"></div>
+                <!-- Card 3 -->
+                <div class="bg-white/5 border border-white/5 rounded-3xl overflow-hidden hover:border-ice/25 transition-all duration-300 flex flex-col commit-premium-card">
                     <div class="h-48 overflow-hidden">
                         <img src="image/wildlife-protection.png" alt="Wildlife Protection"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
-                    <div class="p-10 text-center">
-                        <div class="text-ice mb-6"><svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor"
+                    <div class="p-8 text-center flex-1 flex flex-col justify-center">
+                        <div class="text-ice mb-4"><svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                 </path>
                             </svg></div>
-                        <h4 class="text-xl font-bold mb-4">Wildlife Protection</h4>
-                        <p class="text-muted text-sm">A portion of every booking goes directly to Arctic fox and
-                            reindeer
-                            conservation programs.</p>
+                        <h4 class="text-xl font-bold mb-3">Wildlife Protection</h4>
+                        <p class="text-muted text-sm leading-relaxed">A portion of every booking goes directly to Arctic fox and reindeer conservation programs.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+        </div>
+    </section>
 
     <!-- Final CTA -->
-    <section class="py-32 relative overflow-hidden reveal-item">
+    <section class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM.jpeg" alt="Arctic Horizon"
-                class="w-full h-full object-cover opacity-40 parallax-img scale-110">
+            <img src="image/WhatsApp Image 2026-05-09 at 3.18.57 PM (1).jpeg" alt="Arctic Horizon"
+                class="w-full h-full object-cover opacity-40 scale-110">
             <div class="absolute inset-0 bg-gradient-to-b from-primary-bg via-primary-bg/20 to-primary-bg"></div>
         </div>
         <div class="container relative z-10 px-6">
             <div
-                class="tilt-card glass p-12 md:p-24 rounded-[40px] border border-white/20 shadow-[0_0_50px_rgba(56,189,248,0.1)] max-w-5xl mx-auto backdrop-blur-2xl">
-                <div class="card-glint"></div>
+                class="tilt-card border border-white/10 shadow-[0_0_50px_rgba(56,189,248,0.15)] max-w-5xl mx-auto backdrop-blur-2xl rounded-[40px] p-12 md:p-24 bg-gradient-to-br from-arctic/60 to-primary/80 final-cta-container">
                 <div class="text-center">
                     <h2 class="text-4xl md:text-6xl font-poppins font-extrabold mb-6 glow-text">Ready to <span
                             class="text-primary-accent">Lead</span>?</h2>
