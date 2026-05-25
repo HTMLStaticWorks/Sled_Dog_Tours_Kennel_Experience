@@ -625,7 +625,8 @@ section {
     color: #0A1220 !important;
 }
 
-.light-mode .mobile-menu a:hover {
+.light-mode .mobile-menu a:hover,
+.light-mode .mobile-menu a.active {
     color: #38BDF8 !important;
 }
 
