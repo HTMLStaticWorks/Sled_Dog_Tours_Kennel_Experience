@@ -1006,3 +1006,7 @@ strong, b, .font-bold, .font-semibold, .font-extrabold, .font-black {
     color: #334155 !important;
 }
 
+.text-always-white {
+    color: #ffffff !important;
+}
+
